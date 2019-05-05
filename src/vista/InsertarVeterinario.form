@@ -25,12 +25,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-              <Component id="agregar" min="-2" max="-2" attributes="0"/>
+              <Component id="Bagregarveterinario" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace pref="632" max="32767" attributes="0"/>
-              <Component id="limpiar" min="-2" max="-2" attributes="0"/>
+              <Component id="Blimpiarveterinario" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="160" max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
@@ -104,6 +104,13 @@
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
           </Group>
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
+              <Component id="Batrasveterinario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+              <Component id="Bcerrarveterinario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -180,10 +187,15 @@
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="agregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bagregarveterinario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Blimpiarveterinario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Batrasveterinario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bcerrarveterinario" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -257,7 +269,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jt_nom1veterinarioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="agregar">
+    <Component class="javax.swing.JButton" name="Bagregarveterinario">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
@@ -265,10 +277,10 @@
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="agregar"/>
       </AccessibilityProperties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BagregarveterinarioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="limpiar">
+    <Component class="javax.swing.JButton" name="Blimpiarveterinario">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpiar"/>
       </Properties>
@@ -276,7 +288,7 @@
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="limpiar"/>
       </AccessibilityProperties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BlimpiarveterinarioActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jt_nom2veterinario">
@@ -360,5 +372,21 @@
         </DimensionLayout>
       </Layout>
     </Container>
+    <Component class="javax.swing.JButton" name="Batrasveterinario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Atras"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BatrasveterinarioActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Bcerrarveterinario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BcerrarveterinarioActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

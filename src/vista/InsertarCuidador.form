@@ -101,7 +101,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-                      <Component id="Binsertar" min="-2" max="-2" attributes="0"/>
+                      <Component id="Binsertarcuidador" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="Batrascuidador" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -109,6 +111,11 @@
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="Bcerrarcuidador" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -167,8 +174,13 @@
                   <Component id="Jedadc" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Component id="Binsertar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Binsertarcuidador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Batrascuidador" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="Bcerrarcuidador" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -267,12 +279,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JedadcActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Binsertar">
+    <Component class="javax.swing.JButton" name="Binsertarcuidador">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insertar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BinsertarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BinsertarcuidadorActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
@@ -283,6 +295,22 @@
     <Component class="javax.swing.JTextField" name="Jidcuidador">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JidcuidadorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Batrascuidador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Atras"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BatrascuidadorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Bcerrarcuidador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BcerrarcuidadorActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

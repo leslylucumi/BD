@@ -19,6 +19,7 @@ public class InsertarCuidador extends javax.swing.JFrame {
      */
     public InsertarCuidador() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -51,9 +52,11 @@ public class InsertarCuidador extends javax.swing.JFrame {
         Jdireccionc = new javax.swing.JTextField();
         Jtelefonoc2 = new javax.swing.JTextField();
         Jedadc = new javax.swing.JTextField();
-        Binsertar = new javax.swing.JButton();
+        Binsertarcuidador = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         Jidcuidador = new javax.swing.JTextField();
+        Batrascuidador = new javax.swing.JButton();
+        Bcerrarcuidador = new javax.swing.JButton();
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,10 +151,10 @@ public class InsertarCuidador extends javax.swing.JFrame {
             }
         });
 
-        Binsertar.setText("Insertar");
-        Binsertar.addActionListener(new java.awt.event.ActionListener() {
+        Binsertarcuidador.setText("Insertar");
+        Binsertarcuidador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BinsertarActionPerformed(evt);
+                BinsertarcuidadorActionPerformed(evt);
             }
         });
 
@@ -160,6 +163,20 @@ public class InsertarCuidador extends javax.swing.JFrame {
         Jidcuidador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JidcuidadorActionPerformed(evt);
+            }
+        });
+
+        Batrascuidador.setText("Atras");
+        Batrascuidador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BatrascuidadorActionPerformed(evt);
+            }
+        });
+
+        Bcerrarcuidador.setText("Cerrar");
+        Bcerrarcuidador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcerrarcuidadorActionPerformed(evt);
             }
         });
 
@@ -214,11 +231,17 @@ public class InsertarCuidador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(134, 134, 134)
-                        .addComponent(Binsertar))
+                        .addComponent(Binsertarcuidador)
+                        .addGap(47, 47, 47)
+                        .addComponent(Batrascuidador))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel10)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Bcerrarcuidador)
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,8 +286,12 @@ public class InsertarCuidador extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(Jedadc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
-                .addComponent(Binsertar)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Binsertarcuidador)
+                    .addComponent(Batrascuidador))
+                .addGap(18, 18, 18)
+                .addComponent(Bcerrarcuidador)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -318,7 +345,7 @@ public class InsertarCuidador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JedadcActionPerformed
 
-    private void BinsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinsertarActionPerformed
+    private void BinsertarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinsertarcuidadorActionPerformed
      String nombrec1;
      String nombrec2;
      String apellidoc1;
@@ -352,11 +379,21 @@ public class InsertarCuidador extends javax.swing.JFrame {
             System.out.println("No se inserto el cuidador");
         }
                                          
-    }//GEN-LAST:event_BinsertarActionPerformed
+    }//GEN-LAST:event_BinsertarcuidadorActionPerformed
 
     private void JidcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JidcuidadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JidcuidadorActionPerformed
+
+    private void BatrascuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatrascuidadorActionPerformed
+        Menu abrir = new Menu();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BatrascuidadorActionPerformed
+
+    private void BcerrarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcerrarcuidadorActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_BcerrarcuidadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,7 +432,9 @@ public class InsertarCuidador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Binsertar;
+    private javax.swing.JButton Batrascuidador;
+    private javax.swing.JButton Bcerrarcuidador;
+    private javax.swing.JButton Binsertarcuidador;
     private javax.swing.JTextField Japellidoc1;
     private javax.swing.JTextField Japellidoc2;
     private javax.swing.JTextField Jcorreoc;

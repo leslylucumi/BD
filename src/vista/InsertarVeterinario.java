@@ -19,6 +19,7 @@ public class InsertarVeterinario extends javax.swing.JFrame {
      */
     public InsertarVeterinario() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -40,8 +41,8 @@ public class InsertarVeterinario extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jt_nom1veterinario = new javax.swing.JTextField();
-        agregar = new javax.swing.JButton();
-        limpiar = new javax.swing.JButton();
+        Bagregarveterinario = new javax.swing.JButton();
+        Blimpiarveterinario = new javax.swing.JButton();
         jt_nom2veterinario = new javax.swing.JTextField();
         jt_ape1veterinario = new javax.swing.JTextField();
         jt_ape2veterinario = new javax.swing.JTextField();
@@ -54,6 +55,8 @@ public class InsertarVeterinario extends javax.swing.JFrame {
         Jidveterinario = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        Batrasveterinario = new javax.swing.JButton();
+        Bcerrarveterinario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,17 +84,17 @@ public class InsertarVeterinario extends javax.swing.JFrame {
             }
         });
 
-        agregar.setText("Agregar");
-        agregar.addActionListener(new java.awt.event.ActionListener() {
+        Bagregarveterinario.setText("Agregar");
+        Bagregarveterinario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarActionPerformed(evt);
+                BagregarveterinarioActionPerformed(evt);
             }
         });
 
-        limpiar.setText("Limpiar");
-        limpiar.addActionListener(new java.awt.event.ActionListener() {
+        Blimpiarveterinario.setText("Limpiar");
+        Blimpiarveterinario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                limpiarActionPerformed(evt);
+                BlimpiarveterinarioActionPerformed(evt);
             }
         });
 
@@ -168,17 +171,31 @@ public class InsertarVeterinario extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        Batrasveterinario.setText("Atras");
+        Batrasveterinario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BatrasveterinarioActionPerformed(evt);
+            }
+        });
+
+        Bcerrarveterinario.setText("Cerrar");
+        Bcerrarveterinario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BcerrarveterinarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(165, 165, 165)
-                .addComponent(agregar)
+                .addComponent(Bagregarveterinario)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(632, Short.MAX_VALUE)
-                .addComponent(limpiar)
+                .addComponent(Blimpiarveterinario)
                 .addContainerGap(160, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,6 +250,12 @@ public class InsertarVeterinario extends javax.swing.JFrame {
                         .addComponent(jt_edadveterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(56, 56, 56))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(311, 311, 311)
+                .addComponent(Batrasveterinario)
+                .addGap(88, 88, 88)
+                .addComponent(Bcerrarveterinario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,9 +313,13 @@ public class InsertarVeterinario extends javax.swing.JFrame {
                     .addComponent(jt_ape2veterinario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agregar)
-                    .addComponent(limpiar))
-                .addGap(64, 64, 64))
+                    .addComponent(Bagregarveterinario)
+                    .addComponent(Blimpiarveterinario))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Batrasveterinario)
+                    .addComponent(Bcerrarveterinario))
+                .addContainerGap())
         );
 
         jLabel6.getAccessibleContext().setAccessibleName("jLabel6");
@@ -301,8 +328,8 @@ public class InsertarVeterinario extends javax.swing.JFrame {
         jLabel9.getAccessibleContext().setAccessibleName("jLabel9");
         jLabel10.getAccessibleContext().setAccessibleName("jLabel10");
         jt_nom1veterinario.getAccessibleContext().setAccessibleName("idveterinario");
-        agregar.getAccessibleContext().setAccessibleName("agregar");
-        limpiar.getAccessibleContext().setAccessibleName("limpiar");
+        Bagregarveterinario.getAccessibleContext().setAccessibleName("agregar");
+        Blimpiarveterinario.getAccessibleContext().setAccessibleName("limpiar");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -311,9 +338,9 @@ public class InsertarVeterinario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jt_nom1veterinarioActionPerformed
 
-    private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
+    private void BlimpiarveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlimpiarveterinarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_limpiarActionPerformed
+    }//GEN-LAST:event_BlimpiarveterinarioActionPerformed
 
     private void jt_nom2veterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_nom2veterinarioActionPerformed
         // TODO add your handling code here:
@@ -347,7 +374,7 @@ public class InsertarVeterinario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jt_dirveterinarioActionPerformed
 
-    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
+    private void BagregarveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BagregarveterinarioActionPerformed
      String nombrev1;
      String nombrev2;
      String apellidov1;
@@ -381,11 +408,21 @@ public class InsertarVeterinario extends javax.swing.JFrame {
         }else{
             System.out.println("No se inserto el veteriono");
         }
-    }//GEN-LAST:event_agregarActionPerformed
+    }//GEN-LAST:event_BagregarveterinarioActionPerformed
 
     private void JidveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JidveterinarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JidveterinarioActionPerformed
+
+    private void BatrasveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatrasveterinarioActionPerformed
+        Menu abrir = new Menu();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BatrasveterinarioActionPerformed
+
+    private void BcerrarveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcerrarveterinarioActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_BcerrarveterinarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,8 +463,11 @@ public class InsertarVeterinario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bagregarveterinario;
+    private javax.swing.JButton Batrasveterinario;
+    private javax.swing.JButton Bcerrarveterinario;
+    private javax.swing.JButton Blimpiarveterinario;
     private javax.swing.JTextField Jidveterinario;
-    private javax.swing.JButton agregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -449,6 +489,5 @@ public class InsertarVeterinario extends javax.swing.JFrame {
     private javax.swing.JTextField jt_nom2veterinario;
     private javax.swing.JTextField jt_tel1veterinario;
     private javax.swing.JTextField jt_tel2veterinario;
-    private javax.swing.JButton limpiar;
     // End of variables declaration//GEN-END:variables
 }
