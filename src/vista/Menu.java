@@ -82,19 +82,19 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jabrirveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jabrirveterinarioActionPerformed
-        Insertarveterinario abrir = new Insertarveterinario();
+        InsertarVeterinario abrir = new InsertarVeterinario();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jabrirveterinarioActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Insertarcuidador abrir = new Insertarcuidador();
+        InsertarCuidador abrir = new InsertarCuidador();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Insertaranimal abrir = new Insertaranimal();
+        InsertarAnimal abrir = new InsertarAnimal();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed

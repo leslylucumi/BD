@@ -12,12 +12,12 @@ import modelo.Veterinario;
  *
  * @author angela_maria.marin
  */
-public class Insertarveterinario extends javax.swing.JFrame {
+public class InsertarVeterinario extends javax.swing.JFrame {
 
     /**
      * Creates new form veterinario
      */
-    public Insertarveterinario() {
+    public InsertarVeterinario() {
         initComponents();
     }
 
@@ -404,21 +404,23 @@ public class Insertarveterinario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Insertarveterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarVeterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Insertarveterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarVeterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Insertarveterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarVeterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Insertarveterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarVeterinario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Insertarveterinario().setVisible(true);
+                new InsertarVeterinario().setVisible(true);
             }
         });
     }
