@@ -52,11 +52,12 @@ public class InsertarCuidador extends javax.swing.JFrame {
         Jdireccionc = new javax.swing.JTextField();
         Jtelefonoc2 = new javax.swing.JTextField();
         Jedadc = new javax.swing.JTextField();
-        Binsertarcuidador = new javax.swing.JButton();
+        Bagregarcuidador = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         Jidcuidador = new javax.swing.JTextField();
         Batrascuidador = new javax.swing.JButton();
         Bcerrarcuidador = new javax.swing.JButton();
+        Blimpiarcuidador = new javax.swing.JButton();
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,10 +152,10 @@ public class InsertarCuidador extends javax.swing.JFrame {
             }
         });
 
-        Binsertarcuidador.setText("Insertar");
-        Binsertarcuidador.addActionListener(new java.awt.event.ActionListener() {
+        Bagregarcuidador.setText("Insertar");
+        Bagregarcuidador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BinsertarcuidadorActionPerformed(evt);
+                BagregarcuidadorActionPerformed(evt);
             }
         });
 
@@ -179,6 +180,8 @@ public class InsertarCuidador extends javax.swing.JFrame {
                 BcerrarcuidadorActionPerformed(evt);
             }
         });
+
+        Blimpiarcuidador.setText("Limpiar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -227,21 +230,21 @@ public class InsertarCuidador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Jdireccionc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(49, 49, 49))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(134, 134, 134)
-                        .addComponent(Binsertarcuidador)
+                        .addComponent(Bagregarcuidador)
                         .addGap(47, 47, 47)
                         .addComponent(Batrascuidador))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Bcerrarcuidador)
-                .addGap(28, 28, 28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Blimpiarcuidador)
+                    .addComponent(Bcerrarcuidador))
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,11 +288,17 @@ public class InsertarCuidador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(Jedadc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Binsertarcuidador)
-                    .addComponent(Batrascuidador))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Bagregarcuidador)
+                            .addComponent(Batrascuidador))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Blimpiarcuidador)
+                        .addGap(35, 35, 35)))
                 .addComponent(Bcerrarcuidador)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -345,7 +354,7 @@ public class InsertarCuidador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JedadcActionPerformed
 
-    private void BinsertarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BinsertarcuidadorActionPerformed
+    private void BagregarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BagregarcuidadorActionPerformed
      String nombrec1;
      String nombrec2;
      String apellidoc1;
@@ -379,7 +388,7 @@ public class InsertarCuidador extends javax.swing.JFrame {
             System.out.println("No se inserto el cuidador");
         }
                                          
-    }//GEN-LAST:event_BinsertarcuidadorActionPerformed
+    }//GEN-LAST:event_BagregarcuidadorActionPerformed
 
     private void JidcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JidcuidadorActionPerformed
         // TODO add your handling code here:
@@ -432,9 +441,10 @@ public class InsertarCuidador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bagregarcuidador;
     private javax.swing.JButton Batrascuidador;
     private javax.swing.JButton Bcerrarcuidador;
-    private javax.swing.JButton Binsertarcuidador;
+    private javax.swing.JButton Blimpiarcuidador;
     private javax.swing.JTextField Japellidoc1;
     private javax.swing.JTextField Japellidoc2;
     private javax.swing.JTextField Jcorreoc;
