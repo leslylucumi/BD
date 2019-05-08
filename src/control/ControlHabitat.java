@@ -24,7 +24,7 @@ public class ControlHabitat {
         rs=obje.consultarhabitat(sql);
         int id;
         String e;
-        
+        ///comentariocualquiera
         if(rs!=null){
             try{
             while (rs.next()) {                
