@@ -378,8 +378,8 @@ public class InsertarCuidador extends javax.swing.JFrame {
      dirc = Jdireccionc.getText();
      
        ControlCuidador objce=new ControlCuidador();
-       Cuidador obje=new Cuidador(id_cuidador,nombrec1,nombrec2,apellidoc1,apellidoc2,edadc,correoc,telc1,telc2,dirc);
-        boolean f=objce.insertarCuidador(obje);
+       Cuidador objc=new Cuidador(id_cuidador,nombrec1,nombrec2,apellidoc1,apellidoc2,edadc,correoc,telc1,telc2,dirc);
+        boolean f=objce.insertarCuidador(objc);
         
         if(f){
             
