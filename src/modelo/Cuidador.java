@@ -134,6 +134,7 @@ public class Cuidador {
 
        if (objCon.crearConexion()) {
            try {
+         //Para el procedureeeeeeeeeeeeeeeeeeeee
                Statement = objCon.getConexion().prepareCall(sql);
                Statement.setInt(1, objc.getId_cuidador());
                Statement.setString(2, objc.getNombrec1());
