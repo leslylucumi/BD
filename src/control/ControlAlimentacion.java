@@ -20,7 +20,7 @@ public class ControlAlimentacion {
         LinkedList<Alimentacion> le=new LinkedList<>();
         ResultSet rs;
         Alimentacion obje=new Alimentacion();
-        String sql="select * from tipo_alimentacion";
+        String sql="select * from clasif_alim";
         rs=obje.consultarAlimentacion(sql);
         int id;
         String e;
@@ -28,8 +28,8 @@ public class ControlAlimentacion {
         if(rs!=null){
             try{
             while (rs.next()) {                
-                id=rs.getInt("id_tipo_alimentacion");
-                e=rs.getString("nombre_alimento");
+                id=rs.getInt("id_clasif_alim");
+                e=rs.getString("nombre_clasif_alim");
                 obje=new Alimentacion(id, e);
                 le.add(obje);
             }
