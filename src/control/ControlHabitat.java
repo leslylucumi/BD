@@ -29,7 +29,7 @@ public class ControlHabitat {
             try{
             while (rs.next()) {                
                 id=rs.getInt("id_habitat");
-                e=rs.getString("nombre_habitat");
+                e=rs.getString("zona");
                 obje=new Habitat(id, e);
                 le.add(obje);
             }
