@@ -231,7 +231,9 @@ public class InsertarAnimal extends javax.swing.JFrame {
     private void BagregaranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BagregaranimalActionPerformed
              
         
-       String temp; 
+      String temp; 
+      String temp2; 
+      String temp3; 
      int id_animal;
     String edad;
      String imganimalcara;
@@ -244,14 +246,42 @@ public class InsertarAnimal extends javax.swing.JFrame {
      int id_Especie;
      int id_Habitat;
      int id_Alimentacion;
+      temp3=jComboBox1.getToolTipText();
+     temp2=jComboBox2.getToolTipText();
      temp=jComboBox3.getToolTipText();
-     
+    ///// 
       ControlAlimentacion objcA = new ControlAlimentacion();
         LinkedList<Alimentacion> lA = objcA.consultarAlimentacion();
      for (int i = 0; i < lA.size(); i++) {
            if (temp==lA.get(i).getNombreA()){
            id_Alimentacion=lA.get(i).getId();
            }
+
+        }
+     
+     ///////////////
+           ControlHabitat objch = new ControlHabitat();
+        LinkedList<Habitat> lh = objch.consultarHabitat();
+
+        for (int i = 0; i < lh.size(); i++) {
+            if(temp2==lh.get(i).getNombreH()){
+            
+            id_Habitat= lh.get(i).getId();
+            }
+
+        }
+        
+        
+        ///////////////
+        
+               ControlEspecie objce = new ControlEspecie();
+        LinkedList<Especie> le = objce.consultarEspecies();
+
+        for (int i = 0; i < le.size(); i++) {
+          if(temp3==le.get(i).getNombreE()){
+              id_Especie=le.get(i).getId();
+          
+          }
 
         }
      
