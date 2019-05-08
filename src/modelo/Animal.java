@@ -13,6 +13,7 @@ import java.sql.Statement;
  * @author Acer
  */
 public class Animal {
+    private int id;
     private String edad;
     private String imganimalcara;
     private String imganimalcuerpo;
@@ -21,9 +22,14 @@ public class Animal {
     private String descripcion;
     private String nombre;
     private String peso;
+    private  int id_Especie;
+    private int id_Habitat;
+    private  int id_Alimentacion;
+    
   //  private String dirc;
 
-    public Animal(String edad, String imganimalcara, String imganimalcuerpo, String imganimal, int genero, String descripcion, String nombre, String peso) {
+    public Animal(int id, String edad, String imganimalcara, String imganimalcuerpo, String imganimal, int genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
+        this.id = id;
         this.edad = edad;
         this.imganimalcara = imganimalcara;
         this.imganimalcuerpo = imganimalcuerpo;
@@ -32,7 +38,44 @@ public class Animal {
         this.descripcion = descripcion;
         this.nombre = nombre;
         this.peso = peso;
+        this.id_Especie = id_Especie;
+        this.id_Habitat = id_Habitat;
+        this.id_Alimentacion = id_Alimentacion;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId_Especie() {
+        return id_Especie;
+    }
+
+    public void setId_Especie(int id_Especie) {
+        this.id_Especie = id_Especie;
+    }
+
+    public int getId_Habitat() {
+        return id_Habitat;
+    }
+
+    public void setId_Habitat(int id_Habitat) {
+        this.id_Habitat = id_Habitat;
+    }
+
+    public int getId_Alimentacion() {
+        return id_Alimentacion;
+    }
+
+    public void setId_Alimentacion(int id_Alimentacion) {
+        this.id_Alimentacion = id_Alimentacion;
+    }
+
+   
 
     public String getEdad() {
         return edad;
@@ -103,8 +146,10 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" + "edad=" + edad + ", imganimalcara=" + imganimalcara + ", imganimalcuerpo=" + imganimalcuerpo + ", imganimal=" + imganimal + ", genero=" + genero + ", descripcion=" + descripcion + ", nombre=" + nombre + ", peso=" + peso + '}';
+        return "Animal{" + "id=" + id + ", edad=" + edad + ", imganimalcara=" + imganimalcara + ", imganimalcuerpo=" + imganimalcuerpo + ", imganimal=" + imganimal + ", genero=" + genero + ", descripcion=" + descripcion + ", nombre=" + nombre + ", peso=" + peso + ", id_Especie=" + id_Especie + ", id_Habitat=" + id_Habitat + ", id_Alimentacion=" + id_Alimentacion + '}';
     }
+
+   
     
     public boolean insertarAnimal(String sql) {
           ConnectBD objCon = new ConnectBD();
