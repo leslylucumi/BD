@@ -229,7 +229,32 @@ public class InsertarAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_BlimpiaranimalActionPerformed
 
     private void BagregaranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BagregaranimalActionPerformed
-        // TODO add your handling code here:
+             
+        
+       String temp; 
+     int id_animal;
+    String edad;
+     String imganimalcara;
+     String imganimalcuerpo;
+     String imganimal;
+     int genero;
+     String descripcion;
+     String nombre;
+     String peso;
+     int id_Especie;
+     int id_Habitat;
+     int id_Alimentacion;
+     temp=jComboBox3.getToolTipText();
+     
+      ControlAlimentacion objcA = new ControlAlimentacion();
+        LinkedList<Alimentacion> lA = objcA.consultarAlimentacion();
+     for (int i = 0; i < lA.size(); i++) {
+           if (temp==lA.get(i).getNombreA()){
+           id_Alimentacion=lA.get(i).getId();
+           }
+
+        }
+     
     }//GEN-LAST:event_BagregaranimalActionPerformed
 
     /**
