@@ -12,15 +12,16 @@ import modelo.Animal;
  * @author Acer
  */
 public class ControlAnimal {
-//      public boolean insertarAnimal (Animal obje) {
-//        String sql="Insert into Animales (edad,img_animalcara,img_animalcuerpo,img_animal,genero,descripcion,nombre,peso,idespecialanimal)"+
-//                "value('"+obje.getEdad()+"', '"+obje.getImganimalcara()+"', '"+obje.getImganimal()+"', '"+
-//                obje.getGenero()+"', '"+obje.getDescripcion()+"', '"+obje.getNombre()+"', '"+obje.getPeso()+"', '"+obje.getTelv2()+"', '"+obje.getDirv()+"')";
+    public boolean insertarAnimal (Animal obje) {
+        String sql="Insert into Animales "+
+                "value('"+obje.getId()+"', '"+obje.getEdad()+"', '"+obje.getImganimalcara()+"', '"+
+                obje.getImganimalcuerpo()+"', '"+obje.getImganimal()+"', '"+obje.getGenero()+"', '"+obje.getDescripcion()+"', '"+obje.getNombre()+"', '"+obje.getPeso()+"', '"+
+                obje.getId_Especie()+"','" +obje.getId_Habitat()+"','" +obje.getId_Alimentacion()+"')";
 //        
-//        boolean f=false;
-//        f=obje.insertarAnimal(sql);
+        boolean f=false;
+        f=obje.insertarAnimal(sql);
 //        
-//        return f;
+        return f;
 //    
-//}
+}
 }
