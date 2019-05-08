@@ -12,14 +12,12 @@ import modelo.Cuidador;
  * @author Acer
  */
 public class ControlCuidador {
-      public boolean insertarCuidador(Cuidador obje) {
-        String sql="Insert into cuidadores (id_cuidador,nombrec1,nombrec2,apellidoc1,apellidoc2,edadc,correoc,telc1,telc2,dirc)"+
-                "value('"+obje.getId_cuidador()+"','"+obje.getNombrec1()+"', '"+obje.getNombrec2()+"', '"+obje.getApellidoc1()+"', '"+
-                obje.getApellidoc2()+"', '"+obje.getEdadc()+"', '"+obje.getCorreoc()+"', '"+obje.getTelc1()+"', '"+obje.getTelc2()+"', '"+obje.getDirc()+"')";
-        
-        boolean f=false;
-        f=obje.insertarCuidador(sql);
-        
+      public boolean insertarCuidador(Cuidador objc) {
+       String sql = "{ call agregarCuidador(?,?,?,?,?,?,?,?,?,?) }";
+        boolean f = false;
+         f=objc.insertarCuidador(sql, objc);
         return f;
+  
+       
     }
 }

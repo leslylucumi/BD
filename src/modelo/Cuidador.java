@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -124,21 +126,41 @@ public class Cuidador {
     }
 
     
-      public boolean insertarCuidador(String sql) {
-          ConnectBD objCon = new ConnectBD();
+      public boolean insertarCuidador(String sql, Cuidador objc) {
+         ConnectBD objCon = new ConnectBD();
+         
+         PreparedStatement ps = null; 
+         CallableStatement Statement = null; 
 
-        if (objCon.crearConexion()) {
-            try {
-                Statement sentencia = objCon.getConexion().createStatement();
-                sentencia.executeUpdate(sql);
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-                return false;
-            }
-        }
-        return true;
-    }   
-        
+       if (objCon.crearConexion()) {
+           try {
+               Statement = objCon.getConexion().prepareCall(sql);
+               Statement.setInt(1, objc.getId_cuidador());
+               Statement.setString(2, objc.getNombrec1());
+               Statement.setString(3, objc.getNombrec2());
+               Statement.setString(4, objc.getApellidoc1());
+               Statement.setString(5, objc.getApellidoc2());
+               Statement.setInt(6, objc.getEdadc());
+               Statement.setString(7, objc.getCorreoc());
+               Statement.setString(8, objc.getTelc1());
+               Statement.setString(9, objc.getTelc2());
+               Statement.setString(10, objc.getDirc());
+               
+               
+               Statement.execute();
+              
+           } catch (SQLException ex) {
+               ex.printStackTrace();
+               System.out.println(ex.toString());
+               return false;
+           }
+       }
+       return true;
+       
+    
+   }
+
+    
     
     
 }
