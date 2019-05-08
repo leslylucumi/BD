@@ -8,6 +8,7 @@ package modelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import modelo.ConnectBD;
 
 /**
  *
@@ -15,13 +16,19 @@ import java.sql.Statement;
  */
 public class Habitat {
     private int id;
-    private String nombreE;
+    private String nombreH;
     private String zona; 
     private String descripcion; 
 
-    public Habitat(int id, String nombreE, String zona, String descripcion) {
+    public Habitat(int id, String nombreH) {
         this.id = id;
-        this.nombreE = nombreE;
+        this.nombreH = nombreH;
+    }
+    
+
+    public Habitat(int id, String nombreH, String zona, String descripcion) {
+        this.id = id;
+        this.nombreH = nombreH;
         this.zona = zona;
         this.descripcion = descripcion;
     }
@@ -37,12 +44,12 @@ public class Habitat {
         this.id = id;
     }
 
-    public String getNombreE() {
-        return nombreE;
+    public String getNombreH() {
+        return nombreH;
     }
 
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
+    public void setNombreH(String nombreH) {
+        this.nombreH = nombreH;
     }
 
     public String getZona() {
@@ -63,10 +70,10 @@ public class Habitat {
 
     @Override
     public String toString() {
-        return "habitat{" + "id=" + id + ", nombreE=" + nombreE + ", zona=" + zona + ", descripcion=" + descripcion + '}';
+        return "habitat{" + "id=" + id + ", nombreH=" + nombreH + ", zona=" + zona + ", descripcion=" + descripcion + '}';
     }
     
-    public ResultSet consultarHabitat(String sql) {
+    public ResultSet consultarhabitat(String sql) {
         
         ConnectBD objc=new ConnectBD();
         ResultSet rs=null;

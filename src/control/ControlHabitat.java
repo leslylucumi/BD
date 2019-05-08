@@ -9,18 +9,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import modelo.Especie;
+import modelo.Habitat;
 
 /**
  *
  * @author germanny.lezama
  */
 public class ControlHabitat {
-    public LinkedList<Especie> consultarEspecies(){
-        LinkedList<Especie> le=new LinkedList<>();
+      public LinkedList<Habitat> consultarHabitat() {
+           LinkedList<Habitat> le=new LinkedList<>();
         ResultSet rs;
-        Especie obje=new Especie();
+        Habitat obje=new Habitat();
         String sql="select * from habitats";
-        rs=obje.consultarEspecie(sql);
+        rs=obje.consultarhabitat(sql);
         int id;
         String e;
         
@@ -29,7 +30,7 @@ public class ControlHabitat {
             while (rs.next()) {                
                 id=rs.getInt("id_habitat");
                 e=rs.getString("nombre_habitat");
-                obje=new Especie(id, e);
+                obje=new Habitat(id, e);
                 le.add(obje);
             }
             }catch(SQLException se){

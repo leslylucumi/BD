@@ -5,9 +5,13 @@
  */
 package vista;
 
+import control.ControlAlimentacion;
 import control.ControlEspecie;
+import control.ControlHabitat;
 import java.util.LinkedList;
+import modelo.Alimentacion;
 import modelo.Especie;
+import modelo.Habitat;
 
 /**
  *
@@ -32,6 +36,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox2 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -45,6 +50,8 @@ public class InsertarAnimal extends javax.swing.JFrame {
         Bcerraranimal = new javax.swing.JButton();
         Bagregaranimal = new javax.swing.JButton();
         Blimpiaranimal = new javax.swing.JButton();
+        jComboBox3 = new javax.swing.JComboBox();
+        jComboBox4 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -84,6 +91,11 @@ public class InsertarAnimal extends javax.swing.JFrame {
         });
 
         Bagregaranimal.setText("Agregar");
+        Bagregaranimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BagregaranimalActionPerformed(evt);
+            }
+        });
 
         Blimpiaranimal.setText("Limpiar");
         Blimpiaranimal.addActionListener(new java.awt.event.ActionListener() {
@@ -108,17 +120,26 @@ public class InsertarAnimal extends javax.swing.JFrame {
                                 .addGap(53, 53, 53)
                                 .addComponent(Bagregaranimal)
                                 .addGap(52, 52, 52))
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel4))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Blimpiaranimal)))
@@ -138,16 +159,20 @@ public class InsertarAnimal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addGap(22, 22, 22)
                 .addComponent(Blimpiaranimal)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Batrasanimal)
                     .addComponent(Bcerraranimal)
@@ -167,6 +192,25 @@ public class InsertarAnimal extends javax.swing.JFrame {
             jComboBox1.addItem(le.get(i).getNombreE());
 
         }
+        
+            ControlHabitat objch = new ControlHabitat();
+        LinkedList<Habitat> lh = objch.consultarHabitat();
+
+        for (int i = 0; i < lh.size(); i++) {
+            jComboBox2.addItem(lh.get(i).getNombreH());
+
+        }
+        
+        ///////////
+        
+        
+           ControlAlimentacion objcA = new ControlAlimentacion();
+        LinkedList<Alimentacion> lA = objcA.consultarAlimentacion();
+
+        for (int i = 0; i < lA.size(); i++) {
+            jComboBox3.addItem(lA.get(i).getNombreA());
+
+        }
     }//GEN-LAST:event_formWindowOpened
 
     private void BatrasanimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatrasanimalActionPerformed
@@ -183,6 +227,10 @@ public class InsertarAnimal extends javax.swing.JFrame {
         //cajadetexto1.setText(null);
         //cajadetexto2.setText("");
     }//GEN-LAST:event_BlimpiaranimalActionPerformed
+
+    private void BagregaranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BagregaranimalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BagregaranimalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,6 +276,9 @@ public class InsertarAnimal extends javax.swing.JFrame {
     private javax.swing.JButton Bcerraranimal;
     private javax.swing.JButton Blimpiaranimal;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
