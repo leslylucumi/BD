@@ -309,6 +309,10 @@ public class InsertarAnimal extends javax.swing.JFrame {
      int id_Especie;
      int id_Habitat;
      int id_Alimentacion;
+     id_Alimentacion=0;
+     id_Especie=0;
+     id_Habitat=0;
+     
      temp3=jComboBox1.getToolTipText();
      temp2=jComboBox2.getToolTipText();
      temp=jComboBox3.getToolTipText();
@@ -358,7 +362,16 @@ public class InsertarAnimal extends javax.swing.JFrame {
      nombre=Jnombre.getText();
      peso=Jpesoa.getText();
      
+     ControlAnimal objca=new ControlAnimal();
+       Animal obje=new Animal(id_animal, edad, imganimalcara, imganimalcuerpo, imganimal, genero, descripcion, nombre, peso, id_Especie, id_Habitat, id_Alimentacion);
+        boolean f=objca.insertarAnimal(obje);
         
+        if(f){
+            
+            System.out.println("Se inserto el Animal");
+        }else{
+            System.out.println("No se inserto el Animal");
+        }
      
     }//GEN-LAST:event_BagregaranimalActionPerformed
 

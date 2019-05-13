@@ -12,6 +12,7 @@ import modelo.Animal;
  * @author Acer
  */
 public class ControlAnimal {
+    
     public boolean insertarAnimal (Animal obje) {
         String sql="Insert into Animales "+
                 "value('"+obje.getId()+"', '"+obje.getEdad()+"', '"+obje.getImganimalcara()+"', '"+
