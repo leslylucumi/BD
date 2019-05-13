@@ -37,6 +37,18 @@ public class Veterinario {
         this.id_veterinario = id_veterinario;
     }
 
+    public Veterinario(String nombrev1, String nombrev2, String apellidov1, String apellidov2, int edadv, String correov, String telv1, String telv2, String dirv) {
+        this.nombrev1 = nombrev1;
+        this.nombrev2 = nombrev2;
+        this.apellidov1 = apellidov1;
+        this.apellidov2 = apellidov2;
+        this.edadv = edadv;
+        this.correov = correov;
+        this.telv1 = telv1;
+        this.telv2 = telv2;
+        this.dirv = dirv;
+    }
+
     public String getNombrev1() {
         return nombrev1;
     }
@@ -161,5 +173,7 @@ public class Veterinario {
     
     
     } 
+
+ 
     
 }
