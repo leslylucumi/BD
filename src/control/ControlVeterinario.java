@@ -61,17 +61,17 @@ public class ControlVeterinario {
             String telv2;
            // String id_veterinario;
            
-            if (objv.getNombrev2()== null) {
+            if (objv.getNombrev2()!= null) {
                 nombrev2 = "'" + objv.getNombrev2()+ "'";
             } else {
                 nombrev2 = null;
             }
-            if (objv.getApellidov2()== null) {
+            if (objv.getApellidov2()!= null) {
                 apellidov2 = "'" + objv.getApellidov2()+ "'";
             } else {
                 apellidov2 = null;
             }
-            if (objv.getTelv2()== null) {
+            if (objv.getTelv2()!= null) {
                 telv2 = "'" + objv.getTelv2()+ "'";
             } else {
                 telv2 = null;

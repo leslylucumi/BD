@@ -37,7 +37,20 @@ public class Cuidador {
         this.telc2 = telc2;
         this.dirc = dirc;
         this.id_cuidador = id_cuidador;
+    } 
+
+    public Cuidador(String nombrec1, String nombrec2, String apellidoc1, String apellidoc2, int edadc, String correoc, String telc1, String telc2, String dirc) {
+        this.nombrec1 = nombrec1;
+        this.nombrec2 = nombrec2;
+        this.apellidoc1 = apellidoc1;
+        this.apellidoc2 = apellidoc2;
+        this.edadc = edadc;
+        this.correoc = correoc;
+        this.telc1 = telc1;
+        this.telc2 = telc2;
+        this.dirc = dirc;
     }
+    
 
 
     public String getNombrec1() {
@@ -160,7 +173,7 @@ public class Cuidador {
        
     
    }
-          public boolean modificarCuidador(String sql) {
+        public boolean modificarCuidador(String sql) {
         ConnectBD objCon = new ConnectBD();
         boolean a = false;
         

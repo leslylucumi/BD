@@ -28,6 +28,7 @@ public class ModificarVeterinario extends javax.swing.JFrame {
             jApellido2.setEnabled(false);
             jDireccion.setEnabled(false);
             jEdad.setEnabled(false);
+            this.setLocationRelativeTo(null);
 
     }
 

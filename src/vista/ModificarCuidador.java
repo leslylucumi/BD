@@ -13,12 +13,21 @@ import modelo.Cuidador;
  * @author Acer
  */
 public class ModificarCuidador extends javax.swing.JFrame {
-
+    int id_cuidador;
     /**
      * Creates new form Insertarcuidador
      */
     public ModificarCuidador() {
         initComponents();
+        Jnombrec1.setEnabled(false);
+        Jnombrec2.setEnabled(false);
+        Japellidoc1.setEnabled(false);
+        Japellidoc2.setEnabled(false);
+        Jcorreoc.setEnabled(false);
+        Jtelefonoc1.setEnabled(false);
+        Jtelefonoc2.setEnabled(false);
+        Jdireccionc.setEnabled(false);
+        Jedadc.setEnabled(false);
         this.setLocationRelativeTo(null);
     }
 
@@ -52,11 +61,11 @@ public class ModificarCuidador extends javax.swing.JFrame {
         Jdireccionc = new javax.swing.JTextField();
         Jtelefonoc2 = new javax.swing.JTextField();
         Jedadc = new javax.swing.JTextField();
-        Bagregarcuidador = new javax.swing.JButton();
+        Baceptarcuidador = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         Jidcuidador = new javax.swing.JTextField();
         Batrascuidador = new javax.swing.JButton();
-        Blimpiarcuidador = new javax.swing.JButton();
+        Bmodificarcuidador = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
@@ -152,10 +161,10 @@ public class ModificarCuidador extends javax.swing.JFrame {
             }
         });
 
-        Bagregarcuidador.setText("ACEPTAR");
-        Bagregarcuidador.addActionListener(new java.awt.event.ActionListener() {
+        Baceptarcuidador.setText("Aceptar");
+        Baceptarcuidador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BagregarcuidadorActionPerformed(evt);
+                BaceptarcuidadorActionPerformed(evt);
             }
         });
 
@@ -167,14 +176,19 @@ public class ModificarCuidador extends javax.swing.JFrame {
             }
         });
 
-        Batrascuidador.setText("CANCELAR");
+        Batrascuidador.setText("Cancelar");
         Batrascuidador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BatrascuidadorActionPerformed(evt);
             }
         });
 
-        Blimpiarcuidador.setText("MODIFICAR");
+        Bmodificarcuidador.setText("Modificar");
+        Bmodificarcuidador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BmodificarcuidadorActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("MODIFICAR CUIDADOR");
@@ -184,13 +198,10 @@ public class ModificarCuidador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
@@ -202,40 +213,49 @@ public class ModificarCuidador extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Japellidoc2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Japellidoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Bagregarcuidador)))
+                                    .addComponent(Japellidoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel1))
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Jnombrec1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Jidcuidador, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Jidcuidador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Jnombrec1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(4, 4, 4)
-                        .addComponent(Blimpiarcuidador)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Batrascuidador)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel7))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Jcorreoc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Jtelefonoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Jdireccionc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Jtelefonoc2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addComponent(Jedadc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(41, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Jdireccionc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Jcorreoc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Jtelefonoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Jtelefonoc2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Jedadc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39))))
+                        .addComponent(jLabel11)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Baceptarcuidador)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Bmodificarcuidador)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Batrascuidador)
+                .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,51 +265,58 @@ public class ModificarCuidador extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(Jtelefonoc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(Jidcuidador, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(Jnombrec1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(Jtelefonoc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(Jnombrec2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Japellidoc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(Japellidoc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Jcorreoc, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Jidcuidador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Jcorreoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jLabel1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(Jnombrec1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(Jdireccionc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel2)
+                                    .addComponent(Jnombrec2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Japellidoc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(Japellidoc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(Jtelefonoc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(Jedadc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(88, 88, 88)
+                                .addGap(42, 42, 42)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel5)
+                                            .addComponent(Jdireccionc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel6)
+                                        .addComponent(Jtelefonoc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(Jedadc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Blimpiarcuidador)
-                    .addComponent(Bagregarcuidador)
+                    .addComponent(Bmodificarcuidador)
+                    .addComponent(Baceptarcuidador)
                     .addComponent(Batrascuidador))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -343,41 +370,41 @@ public class ModificarCuidador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JedadcActionPerformed
 
-    private void BagregarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BagregarcuidadorActionPerformed
-     String nombrec1;
-     String nombrec2;
-     String apellidoc1;
-     String apellidoc2;
-     int edadc;
-     String correoc;
-     String telc1;
-     String telc2;
-     String dirc;
+    private void BaceptarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaceptarcuidadorActionPerformed
      int id_cuidador;
-     
-     id_cuidador=Integer.parseInt(Jidcuidador.getText());
-     nombrec1=Jnombrec1.getText();
-     nombrec2=Jnombrec2.getText();
-     apellidoc1=Japellidoc1.getText();
-     apellidoc2=Japellidoc2.getText();
-     edadc=Integer.parseInt(Jedadc.getText());
-     correoc=Jcorreoc.getText();
-     telc1=Jtelefonoc1.getText();
-     telc2=Jtelefonoc2.getText();
-     dirc = Jdireccionc.getText();
-     
-       ControlCuidador objce=new ControlCuidador();
-       Cuidador objc=new Cuidador(id_cuidador,nombrec1,nombrec2,apellidoc1,apellidoc2,edadc,correoc,telc1,telc2,dirc);
-        boolean f=objce.insertarCuidador(objc);
-        
-        if(f){
-            
-            System.out.println("Se inserto el cuidador");
-        }else{
-            System.out.println("No se inserto el cuidador");
+
+        try {
+
+            ControlCuidador objc = new ControlCuidador();
+            id_cuidador = Integer.parseInt(Jidcuidador.getText());
+            Cuidador objcu = objc.ModificarCuidador(id_cuidador);
+            Jnombrec1.setText(objcu.getNombrec1());
+            Jnombrec2.setText(objcu.getNombrec2());
+            Jcorreoc.setText(objcu.getCorreoc()+ "");
+            Jtelefonoc1.setText(objcu.getTelc1()+ "");
+            Jtelefonoc2.setText(objcu.getTelc2()+ "");
+            Japellidoc1.setText(objcu.getApellidoc1()+ "");
+            Japellidoc2.setText(objcu.getApellidoc2()+ "");
+            Jdireccionc.setText(objcu.getDirc()+ "");
+            Jedadc.setText(objcu.getEdadc()+ "");
+            // jXDatePickerlastmodi.setText(obje.getLast_update() + "");
+
+            Jnombrec1.setEnabled(true);
+            Jnombrec2.setEnabled(true);
+            Jcorreoc.setEnabled(true);
+            Jtelefonoc1.setEnabled(true);
+            Jtelefonoc2.setEnabled(true);
+            Japellidoc1.setEnabled(true);
+            Japellidoc2.setEnabled(true);
+            Jdireccionc.setEnabled(true);
+            Jedadc.setEnabled(true);
+
+        } catch (Exception e) {
+            System.out.println("error" + e);
+            e.printStackTrace();
         }
                                          
-    }//GEN-LAST:event_BagregarcuidadorActionPerformed
+    }//GEN-LAST:event_BaceptarcuidadorActionPerformed
 
     private void JidcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JidcuidadorActionPerformed
         // TODO add your handling code here:
@@ -388,6 +415,56 @@ public class ModificarCuidador extends javax.swing.JFrame {
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BatrascuidadorActionPerformed
+
+    private void BmodificarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmodificarcuidadorActionPerformed
+    // TODO add your handling code here:
+        id_cuidador = Integer.parseInt(Jidcuidador.getText());
+        String nombrec1 = null;
+        String nombrec2 = null;
+        String apellidoc1 = null;
+        String apellidoc2 = null;
+        int edadc = 0;
+        String correoc = null;
+        String telc1 = null;
+        String telc2 = null;
+        String dirc = null;
+     
+
+        if (Jnombrec2.getText()!=""){
+            nombrec2 = Jnombrec1.getText();
+        }
+
+        if (Japellidoc2.getText()!=""){
+            apellidoc2 = Japellidoc2.getText();
+        }
+
+        if (Jtelefonoc2.getText()!=""){
+            telc2 = Jtelefonoc2.getText();
+        }
+
+
+        nombrec1 = Jnombrec1.getText();
+        apellidoc1 = Japellidoc1.getText();
+        edadc = Integer.parseInt(Jedadc.getText());
+        correoc = Jcorreoc.getText();
+        telc1 = Jtelefonoc1.getText();
+        dirc = Jdireccionc.getText();
+
+        ControlCuidador objm = new ControlCuidador();
+
+        Cuidador objc = new Cuidador(nombrec1,nombrec2,apellidoc1,apellidoc2,edadc,correoc,telc1,telc2, dirc);
+
+        try {
+            boolean ch = objm.ModificarCuidadores(objc, id_cuidador);
+            if (ch){
+                System.out.println("Se modificó el cuidador");
+            } else {
+                System.out.println("No se modificó");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }                                              
+    }//GEN-LAST:event_BmodificarcuidadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -428,9 +505,9 @@ public class ModificarCuidador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bagregarcuidador;
+    private javax.swing.JButton Baceptarcuidador;
     private javax.swing.JButton Batrascuidador;
-    private javax.swing.JButton Blimpiarcuidador;
+    private javax.swing.JButton Bmodificarcuidador;
     private javax.swing.JTextField Japellidoc1;
     private javax.swing.JTextField Japellidoc2;
     private javax.swing.JTextField Jcorreoc;

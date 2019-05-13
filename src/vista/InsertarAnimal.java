@@ -260,7 +260,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
         LinkedList<Habitat> lh = objch.consultarHabitat();
 
         for (int i = 0; i < lh.size(); i++) {
-            jComboBox2.addItem(lh.get(i).getNombreH());
+            jComboBox4.addItem(lh.get(i).getNombreH());
 
         }
         
@@ -314,7 +314,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
      id_Habitat=0;
      
      temp3=jComboBox1.getToolTipText();
-     temp2=jComboBox2.getToolTipText();
+     temp2=jComboBox4.getToolTipText();
      temp=jComboBox3.getToolTipText();
     ///// 
      ControlAlimentacion objcA = new ControlAlimentacion();
