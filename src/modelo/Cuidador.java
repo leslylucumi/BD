@@ -160,6 +160,28 @@ public class Cuidador {
        
     
    }
+          public boolean modificarCuidador(String sql) {
+        ConnectBD objCon = new ConnectBD();
+        boolean a = false;
+        
+       if (objCon.crearConexion()) {
+       try {
+           Statement stat;
+           stat = objCon.getConexion().createStatement();
+           stat.executeUpdate(sql);
+           a=true;
+       } catch (SQLException ex) {
+           ex.printStackTrace();
+           System.out.println(ex.toString());
+           return false;
+       }
+         
+    }  
+       return a;
+    
+    
+    
+    }
 
     
     
