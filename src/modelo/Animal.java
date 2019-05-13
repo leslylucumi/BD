@@ -157,7 +157,9 @@ public class Animal {
     public boolean insertarAnimal(Animal obje,String sql) {
           
          boolean t=false;
-        FileInputStream fis = null;
+        FileInputStream fis1 = null;
+        FileInputStream fis2 = null;
+        FileInputStream fis3 = null;
         PreparedStatement ps = null;
         ConnectBD obj=new ConnectBD();
         try {
@@ -166,10 +168,24 @@ public class Animal {
              File file1=new File(obje.getImganimalcara());
              File file2=new File(obje.getImganimalcuerpo());
              File file3=new File(obje.getImganimal());
+             fis1=new FileInputStream(file1);
+             fis2=new FileInputStream(file2);
+             fis3=new FileInputStream(file3);
+             ps=obj.getConexion().prepareStatement(sql);
+             ps.setInt(1,obje.getId());
+              ps.setString(2,obje.getEdad());
+              ps.setBinaryStream(3, fis1, (int) file1.length());
+              ps.setBinaryStream(4, fis2, (int) file2.length());
+              ps.setBinaryStream(5, fis3, (int) file3.length());
+              ps.setString(6,obje.getGenero());
+              ps.setString(7,obje.getDescripcion());
+               ps.setString(8,obje.getNombre());
+               ps.setString(9,obje.getPeso());
+               ps.setInt(10,obje.getId_Habitat());
+                ps.setInt(10,obje.getId_Alimentacion());
                 
-                
-                
-                
+                ps.executeUpdate();
+                obj.getConexion().commit();
                 t=true;
             }
         }catch (Exception ex) {
@@ -178,7 +194,9 @@ public class Animal {
         } finally {
             try {
                 ps.close();
-                fis.close();
+                fis1.close();
+                fis2.close();
+                fis3.close();
             } catch (Exception ex) {
                 t=false;
                 System.out.println("Errro "+ex.toString());
