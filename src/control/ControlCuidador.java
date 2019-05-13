@@ -5,7 +5,10 @@
  */
 package control;
 
+import java.sql.ResultSet;
+import modelo.ConnectBD;
 import modelo.Cuidador;
+
 
 /**
  *
@@ -20,4 +23,12 @@ public class ControlCuidador {
   
        
     }
+      
+      public Cuidador ModificarVeterinario(int id_Cuidador) {
+          ConnectBD objCon = new ConnectBD();
+          String sql = "select * from veterinarios where id_cuidador=" + id_Cuidador + "";
+        ResultSet rs = null;
+        Cuidador objv = null;
+      
+      }
 }
