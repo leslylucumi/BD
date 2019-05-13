@@ -6,10 +6,12 @@
 package vista;
 
 import control.ControlAlimentacion;
+import control.ControlAnimal;
 import control.ControlEspecie;
 import control.ControlHabitat;
 import java.util.LinkedList;
 import modelo.Alimentacion;
+import modelo.Animal;
 import modelo.Especie;
 import modelo.Habitat;
 
@@ -300,7 +302,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
      String imganimalcara;
      String imganimalcuerpo;
      String imganimal;
-     int genero;
+     String genero;
      String descripcion;
      String nombre;
      String peso;
@@ -346,6 +348,15 @@ public class InsertarAnimal extends javax.swing.JFrame {
 
         }
         
+     id_animal=Integer.parseInt(Jid.getText());
+     edad=Jedada.getText();
+     imganimalcara=Jimgca.getText();
+     imganimalcuerpo=Jimgcua.getText();
+     imganimal=Jimga.getText();
+     genero=Jgeneroa.getText();
+     descripcion=Jdescripa.getText();
+     nombre=Jnombre.getText();
+     peso=Jpesoa.getText();
      
         
      

@@ -18,7 +18,7 @@ public class Animal {
     private String imganimalcara;
     private String imganimalcuerpo;
     private String imganimal;
-    private int genero;
+    private String genero;
     private String descripcion;
     private String nombre;
     private String peso;
@@ -28,7 +28,7 @@ public class Animal {
     
   //  private String dirc;
 
-    public Animal(int id, String edad, String imganimalcara, String imganimalcuerpo, String imganimal, int genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
+    public Animal(int id, String edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
         this.id = id;
         this.edad = edad;
         this.imganimalcara = imganimalcara;
@@ -109,11 +109,11 @@ public class Animal {
         this.imganimal = imganimal;
     }
 
-    public int getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(int genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
     }
 
