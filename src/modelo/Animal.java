@@ -5,6 +5,9 @@
  */
 package modelo;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -151,18 +154,38 @@ public class Animal {
 
    
     
-    public boolean insertarAnimal(String sql) {
-          ConnectBD objCon = new ConnectBD();
-
-        if (objCon.crearConexion()) {
+    public boolean insertarAnimal(Animal obje,String sql) {
+          
+         boolean t=false;
+        FileInputStream fis = null;
+        PreparedStatement ps = null;
+        ConnectBD obj=new ConnectBD();
+        try {
+            if(obj.crearConexion()){
+            obj.getConexion().setAutoCommit(false);
+             File file1=new File(obje.getImganimalcara());
+             File file2=new File(obje.getImganimalcuerpo());
+             File file3=new File(obje.getImganimal());
+                
+                
+                
+                
+                t=true;
+            }
+        }catch (Exception ex) {
+            t=false;
+            System.out.println("Error "+ex.toString());
+        } finally {
             try {
-                Statement sentencia = objCon.getConexion().createStatement();
-                sentencia.executeUpdate(sql);
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-                return false;
+                ps.close();
+                fis.close();
+            } catch (Exception ex) {
+                t=false;
+                System.out.println("Errro "+ex.toString());
             }
         }
-        return true;
-    }   
+        return t;
+
+        
+}
 }
