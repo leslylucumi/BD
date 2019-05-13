@@ -25,8 +25,8 @@ public class ControlAnimal {
 //        return f;
 
      boolean t=false;
-        String sql="insert into estudiantes(id_animal,edad,img_animalcara,img_animalcuerpo,img_animal, genero, descripcion,nombre,peso,id_especie_animal,id_habitat_animal,id_clasif_animal)"+
-                "values(?,?,?,?,?,?,?,?,?,?)";
+        String sql="insert into animales(id_animal,edad,img_animalcara,img_animalcuerpo,img_animal, genero, descripcion,nombre,peso,id_especie_animal,id_habitat_animal,id_clasif_animal)"+
+                "values(?,?,?,?,?,?,?,?,?,?,?,?)";
         
         t=obje.insertarAnimal(obje,sql);
         

@@ -181,8 +181,9 @@ public class Animal {
               ps.setString(7,obje.getDescripcion());
                ps.setString(8,obje.getNombre());
                ps.setString(9,obje.getPeso());
-               ps.setInt(10,obje.getId_Habitat());
-                ps.setInt(10,obje.getId_Alimentacion());
+               ps.setInt(10,obje.getId_Especie());
+                ps.setInt(11,obje.getId_Habitat());
+                 ps.setInt(12,obje.getId_Alimentacion());
                 
                 ps.executeUpdate();
                 obj.getConexion().commit();
