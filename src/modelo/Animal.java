@@ -25,13 +25,13 @@ public class Animal {
     private String genero;
     private String descripcion;
     private String nombre;
-    private String peso;
+    private double peso;
     private int id_Especie;
     private int id_Habitat;
     private int id_Alimentacion;
 
     //  private String dirc;
-    public Animal(int id, int edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
+    public Animal(int id, int edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, double peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
         this.id = id;
         this.edad = edad;
         this.imganimalcara = imganimalcara;
@@ -46,7 +46,7 @@ public class Animal {
         this.id_Alimentacion = id_Alimentacion;
     }
 
-    public Animal(int edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
+    public Animal(int edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, double peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
         this.edad = edad;
         this.imganimalcara = imganimalcara;
         this.imganimalcuerpo = imganimalcuerpo;
@@ -149,11 +149,11 @@ public class Animal {
         this.nombre = nombre;
     }
 
-    public String getPeso() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(String peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
@@ -192,7 +192,7 @@ public class Animal {
                 ps.setString(6, obje.getGenero());
                 ps.setString(7, obje.getDescripcion());
                 ps.setString(8, obje.getNombre());
-                ps.setString(9, obje.getPeso());
+                ps.setDouble(9, obje.getPeso());
                 ps.setInt(10, obje.getId_Especie());
                 ps.setInt(11, obje.getId_Habitat());
                 ps.setInt(12, obje.getId_Alimentacion());
