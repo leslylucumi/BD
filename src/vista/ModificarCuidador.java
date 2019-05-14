@@ -431,7 +431,7 @@ public class ModificarCuidador extends javax.swing.JFrame {
      
 
         if (Jnombrec2.getText()!=""){
-            nombrec2 = Jnombrec1.getText();
+            nombrec2 = Jnombrec2.getText();
         }
 
         if (Japellidoc2.getText()!=""){

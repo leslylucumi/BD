@@ -46,6 +46,21 @@ public class Animal {
         this.id_Alimentacion = id_Alimentacion;
     }
 
+    public Animal(int edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
+        this.edad = edad;
+        this.imganimalcara = imganimalcara;
+        this.imganimalcuerpo = imganimalcuerpo;
+        this.imganimal = imganimal;
+        this.genero = genero;
+        this.descripcion = descripcion;
+        this.nombre = nombre;
+        this.peso = peso;
+        this.id_Especie = id_Especie;
+        this.id_Habitat = id_Habitat;
+        this.id_Alimentacion = id_Alimentacion;
+    }
+    
+
     public int getId() {
         return id;
     }
@@ -203,4 +218,27 @@ public class Animal {
         return t;
 
     }
+    public boolean modificarAnimal(String sql) {
+        ConnectBD objCon = new ConnectBD();
+        boolean a = false;
+        
+       if (objCon.crearConexion()) {
+       try {
+           Statement stat;
+           stat = objCon.getConexion().createStatement();
+           stat.executeUpdate(sql);
+           a=true;
+       } catch (SQLException ex) {
+           ex.printStackTrace();
+           System.out.println(ex.toString());
+           return false;
+       }
+         
+    }  
+       return a;
+    
+    
+    
+    } 
+
 }

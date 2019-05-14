@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import modelo.ConnectBD;
 import modelo.Cuidador;
-import modelo.Veterinario;
+
 
 
 /**

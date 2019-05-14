@@ -5,7 +5,11 @@
  */
 package control;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import modelo.Animal;
+import modelo.ConnectBD;
+import modelo.Veterinario;
 
 /**
  *
@@ -32,7 +36,61 @@ public class ControlAnimal {
         
         return t;
     }
+    public Animal ModificarAnimal(int id_animal) {
+        ConnectBD objCon = new ConnectBD();
+        String sql = "select * from animales where id_animal=" + id_animal + "";
+        ResultSet rs = null;
+        Animal obja = null;
 
-//    
+        if (objCon.crearConexion()) {
+            try {
+                Statement stat = objCon.getConexion().createStatement();
+                rs = stat.executeQuery(sql);
+                while (rs.next()) {
+                    obja = new Animal (rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+                            rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10),rs.getInt(11),rs.getInt(12));
+
+                    System.out.println(rs.getString(2));
+                }
+                objCon.getConexion().close();
+            } catch (Exception e) {
+
+                System.out.println(e.toString());
+            }
+        }
+
+        return obja;
+
+    }
+//   
+     public boolean ModificarAnimales(Animal obja, int id_animal) {
+        boolean c = false;
+
+        try {
+
+           String img_animal; 
+           
+            if (obja.getImganimal()!= null) {
+                img_animal = "'" + obja.getImganimal()+ "'";
+            } else {
+                img_animal = null;
+            }
+           
+
+            String sql = "update veterinarios set edad =" + obja.getEdad()+ ", img_animalcara =" + obja.getImganimalcara() + ", img_animalcuerpo =" + obja.getImganimalcuerpo() + ","
+                    + "img_animal = " + obja.getImganimal() + " ,genero =" + obja.getGenero()+ " ,descripcion =" + obja.getDescripcion()+ " ,nombre =" + obja.getNombre()+ ", "
+                    + "peso =" + obja.getPeso() + " ,id_especie_animal =" + obja.getId_Especie() + " ,id_especie_animal =" + obja.getId_Especie() +" ,id_clasif_animal =" + obja.getId_Alimentacion()
+                    + " where id_animal=" + id_animal; 
+            
+            c = obja.modificarAnimal(sql);
+
+        } catch (Exception e) {
+
+            System.out.println(e.toString());
+        }
+
+        return c;
+
+    }
 }
 

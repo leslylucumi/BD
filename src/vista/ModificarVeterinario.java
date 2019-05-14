@@ -90,6 +90,12 @@ public class ModificarVeterinario extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
         jLabel9.setText("Edad");
 
+        jNombre2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNombre2ActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Aceptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,6 +340,10 @@ public class ModificarVeterinario extends javax.swing.JFrame {
     private void jEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEdadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jEdadActionPerformed
+
+    private void jNombre2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNombre2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jNombre2ActionPerformed
 
     /**
      * @param args the command line arguments
