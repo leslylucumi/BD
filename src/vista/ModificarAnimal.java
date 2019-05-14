@@ -5,31 +5,47 @@
  */
 package vista;
 
+import control.ControlAlimentacion;
 import control.ControlAnimal;
+import control.ControlEspecie;
+import control.ControlHabitat;
+import java.util.LinkedList;
+import modelo.Alimentacion;
 import modelo.Animal;
+import modelo.Especie;
+import modelo.Habitat;
+
 /**
  *
  * @author LeslyLC
  */
 public class ModificarAnimal extends javax.swing.JFrame {
 
+    LinkedList<Especie> le;
+    LinkedList<Habitat> lh;
+    LinkedList<Alimentacion> lA;
+    String esp;
+    String habi;
+    String alim;
+    int id_animal;
+
     /**
      * Creates new form ModificarAnimal
      */
     public ModificarAnimal() {
         initComponents();
-            Jedad.setEnabled(false);
-            Jimgca.setEnabled(false);
-            Jimgcua.setEnabled(false);
-            Jimga.setEnabled(false);
-            Jgeneroa.setEnabled(false);
-            Jdescripa.setEnabled(false);
-            Jnombre.setEnabled(false);
-            Jpesoa.setEnabled(false);
-            jComboBoxEspecia.setEnabled(false);
-            jComboBox3.setEnabled(false);
-            Jcombobox4.setEnabled(false);
-            this.setLocationRelativeTo(null);
+        Jedad.setEnabled(false);
+        Jimgca.setEnabled(false);
+        Jimgcua.setEnabled(false);
+        Jimga.setEnabled(false);
+        Jgeneroa.setEnabled(false);
+        Jdescripa.setEnabled(false);
+        Jnombre.setEnabled(false);
+        Jpesoa.setEnabled(false);
+        jComboBoxEspecia.setEnabled(false);
+        jComboBox3.setEnabled(false);
+        JcomboboxHabitat.setEnabled(false);
+        this.setLocationRelativeTo(null);
 
     }
 
@@ -46,7 +62,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
         Baceptaranimal = new javax.swing.JButton();
         Blimpiaranimal = new javax.swing.JButton();
         jComboBox3 = new javax.swing.JComboBox();
-        Jcombobox4 = new javax.swing.JComboBox();
+        JcomboboxHabitat = new javax.swing.JComboBox();
         Jedad = new javax.swing.JTextField();
         Jimgca = new javax.swing.JTextField();
         Jimgcua = new javax.swing.JTextField();
@@ -182,7 +198,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jComboBoxEspecia, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Jcombobox4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(JcomboboxHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Baceptaranimal)
@@ -255,7 +271,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
-                        .addComponent(Jcombobox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JcomboboxHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Baceptaranimal)
@@ -272,12 +288,39 @@ public class ModificarAnimal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {
+
+        ControlEspecie objce = new ControlEspecie();
+        le = objce.consultarEspecies();
+
+        for (int i = 0; i < le.size(); i++) {
+            jComboBoxEspecia.addItem(le.get(i).getNombreE());
+
+        }
+
+        ControlHabitat objch = new ControlHabitat();
+        lh = objch.consultarHabitat();
+
+        for (int i = 0; i < lh.size(); i++) {
+            JcomboboxHabitat.addItem(lh.get(i).getNombreH());
+
+        }
+
+        ///////////
+        ControlAlimentacion objcA = new ControlAlimentacion();
+        lA = objcA.consultarAlimentacion();
+
+        for (int i = 0; i < lA.size(); i++) {
+            jComboBox3.addItem(lA.get(i).getNombreA());
+
+        }
+    }
     private void BcerraranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcerraranimalActionPerformed
         System.exit(0);
     }//GEN-LAST:event_BcerraranimalActionPerformed
 
     private void BaceptaranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaceptaranimalActionPerformed
-         int id_animal;
+        int id_animal;
 
         try {
 
@@ -292,10 +335,28 @@ public class ModificarAnimal extends javax.swing.JFrame {
             Jdescripa.setText(objan.getDescripcion());
             Jnombre.setText(objan.getNombre());
             Jpesoa.setText(objan.getPeso());
-            
+
             int id_Alimentacion = 0;
             int id_Especie = 0;
             int id_Habitat = 0;
+
+            for (int i = 0; i < le.size(); i++) {
+                if (esp.equals(le.get(i).getNombreE())) {
+                    id_Especie = le.get(i).getId();
+                }
+            }
+
+            for (int i = 0; i < lA.size(); i++) {
+                if (alim.equals(lA.get(i).getNombreA())) {
+                    id_Alimentacion = lA.get(i).getId();
+                }
+            }
+
+            for (int i = 0; i < lh.size(); i++) {
+                if (habi.equals(lh.get(i).getNombreH())) {
+                    id_Habitat = lh.get(i).getId();
+                }
+            }
 
             Jedad.setEnabled(true);
             Jimgca.setEnabled(true);
@@ -307,15 +368,14 @@ public class ModificarAnimal extends javax.swing.JFrame {
             Jpesoa.setEnabled(true);
             jComboBoxEspecia.setEnabled(true);
             jComboBox3.setEnabled(true);
-            Jcombobox4.setEnabled(true);
+            JcomboboxHabitat.setEnabled(true);
 
         } catch (Exception e) {
             System.out.println("error" + e);
             e.printStackTrace();
         }
 
-    
-       
+
     }//GEN-LAST:event_BaceptaranimalActionPerformed
 
     private void BlimpiaranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlimpiaranimalActionPerformed
@@ -324,7 +384,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_BlimpiaranimalActionPerformed
 
     private void jComboBoxEspeciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEspeciaActionPerformed
-        
+
         // System.out.println("iten seleccionado "+jComboBox1.getSelectedItem());
     }//GEN-LAST:event_jComboBoxEspeciaActionPerformed
 
@@ -335,7 +395,68 @@ public class ModificarAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_BatrasanimalActionPerformed
 
     private void Bmodificaranimal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bmodificaranimal1ActionPerformed
-        // TODO add your handling code here:
+        id_animal = Integer.parseInt(Jid.getText());
+        int edad = 0;
+        String img_animalcara = null;
+        String img_animalcuerpo = null;
+        String img_animal = null;
+        String genero = null;
+        String descripcion = null;
+        String nombre = null;
+        String peso = null;
+        int id_especie_animal = 0;
+        int id_habitat_animal = 0;
+        int id_clasif_animal = 0;
+
+        if (Jimga.getText() != "") {
+            img_animal = Jimga.getText();
+        }
+
+        edad = Integer.parseInt(Jedad.getText());
+        img_animalcara = Jimgca.getText();
+        img_animalcuerpo = Jimgcua.getText();
+        img_animal = Jimga.getText();
+        genero = Jgeneroa.getText();
+        descripcion = Jdescripa.getText();
+        nombre = Jnombre.getText();
+        peso = Jpesoa.getText();
+        int id_Alimentacion = 0;
+        int id_Especie = 0;
+        int id_Habitat = 0;
+
+        for (int i = 0; i < le.size(); i++) {
+            if (esp.equals(le.get(i).getNombreE())) {
+                id_Especie = le.get(i).getId();
+            }
+        }
+
+        for (int i = 0; i < lA.size(); i++) {
+            if (alim.equals(lA.get(i).getNombreA())) {
+                id_Alimentacion = lA.get(i).getId();
+            }
+        }
+
+        for (int i = 0; i < lh.size(); i++) {
+            if (habi.equals(lh.get(i).getNombreH())) {
+                id_Habitat = lh.get(i).getId();
+            }
+        }
+
+        ControlAnimal objm = new ControlAnimal();
+
+        Animal obja = new Animal(edad, img_animalcara, img_animalcuerpo, img_animal, genero, descripcion, nombre, peso, id_Alimentacion,
+        id_Especie, id_Habitat);
+
+        try {
+            boolean ch = objm.ModificarAnimales(obja, id_animal);
+            if (ch) {
+                System.out.println("Se modificó el animal");
+            } else {
+                System.out.println("No se modificó");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_Bmodificaranimal1ActionPerformed
 
     /**
@@ -369,10 +490,10 @@ public class ModificarAnimal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ModificarAnimal().setVisible(true);
-            } 
+            }
+        });
     }
-      }
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Baceptaranimal;
@@ -380,7 +501,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
     private javax.swing.JButton Bcerraranimal;
     private javax.swing.JButton Blimpiaranimal;
     private javax.swing.JButton Bmodificaranimal1;
-    private javax.swing.JComboBox Jcombobox4;
+    private javax.swing.JComboBox JcomboboxHabitat;
     private javax.swing.JTextField Jdescripa;
     private javax.swing.JTextField Jedad;
     private javax.swing.JTextField Jgeneroa;

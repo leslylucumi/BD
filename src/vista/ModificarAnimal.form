@@ -65,7 +65,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jComboBox3" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
                                           <Component id="jComboBoxEspecia" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
-                                          <Component id="Jcombobox4" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                                          <Component id="JcomboboxHabitat" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -165,7 +165,7 @@
                           <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="Jcombobox4" min="-2" max="-2" attributes="0"/>
+                      <Component id="JcomboboxHabitat" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Baceptaranimal" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -217,7 +217,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="Jcombobox4">
+    <Component class="javax.swing.JComboBox" name="JcomboboxHabitat">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
