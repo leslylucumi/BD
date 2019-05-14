@@ -25,7 +25,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
      * Creates new form InsertarAnimal
      */
     LinkedList<Especie> le;
-    LinkedList<Habitat> lh ;
+    LinkedList<Habitat> lh;
     LinkedList<Alimentacion> lA;
     String esp;
     String habi;
@@ -270,7 +270,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
         }
 
         ControlHabitat objch = new ControlHabitat();
-         lh = objch.consultarHabitat();
+        lh = objch.consultarHabitat();
 
         for (int i = 0; i < lh.size(); i++) {
             jComboBox4.addItem(lh.get(i).getNombreH());
@@ -279,7 +279,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
 
         ///////////
         ControlAlimentacion objcA = new ControlAlimentacion();
-         lA = objcA.consultarAlimentacion();
+        lA = objcA.consultarAlimentacion();
 
         for (int i = 0; i < lA.size(); i++) {
             jComboBox3.addItem(lA.get(i).getNombreA());
@@ -308,7 +308,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
         String temp2;
         String temp3;
         int id_animal;
-        String edad;
+        int edad;
         String imganimalcara;
         String imganimalcuerpo;
         String imganimal;
@@ -323,28 +323,26 @@ public class InsertarAnimal extends javax.swing.JFrame {
         id_Especie = 0;
         id_Habitat = 0;
 
-        
         for (int i = 0; i < le.size(); i++) {
-            if(esp.equals(le.get(i).getNombreE())) {
-                id_Especie=le.get(i).getId();
+            if (esp.equals(le.get(i).getNombreE())) {
+                id_Especie = le.get(i).getId();
             }
-            
         }
-        
-        
+
         for (int i = 0; i < lA.size(); i++) {
-            if(alim.equals(lA.get(i).getNombreA())) {
-                id_Especie=lA.get(i).getId();
-            }   
-        }
-        
-            for (int i = 0; i < lh.size(); i++) {
-            if(habi.equals(lh.get(i).getNombreH())) {
-                id_Especie=lh.get(i).getId();
+            if (alim.equals(lA.get(i).getNombreA())) {
+            id_Alimentacion = lA.get(i).getId();
             }
+        }
+
+        for (int i = 0; i < lh.size(); i++) {
+            if (habi.equals(lh.get(i).getNombreH())) {
+                id_Habitat = lh.get(i).getId();
+            }
+        }
         ///// 
         id_animal = Integer.parseInt(Jid.getText());
-        edad = Jedada.getText();
+        edad = Integer.parseInt(Jedada.getText());
         imganimalcara = Jimgca.getText();
         imganimalcuerpo = Jimgcua.getText();
         imganimal = Jimga.getText();
@@ -352,7 +350,6 @@ public class InsertarAnimal extends javax.swing.JFrame {
         descripcion = Jdescripa.getText();
         nombre = Jnombre.getText();
         peso = Jpesoa.getText();
-        
 
         ControlAnimal objca = new ControlAnimal();
         Animal obje = new Animal(id_animal, edad, imganimalcara, imganimalcuerpo, imganimal, genero, descripcion, nombre, peso, id_Especie, id_Habitat, id_Alimentacion);
@@ -366,11 +363,11 @@ public class InsertarAnimal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BagregaranimalActionPerformed
-    }
+
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         esp = (String) jComboBox1.getSelectedItem();
-         alim = (String) jComboBox3.getSelectedItem();
-          habi = (String) jComboBox4.getSelectedItem();
+        alim = (String) jComboBox3.getSelectedItem();
+        habi = (String) jComboBox4.getSelectedItem();
         // System.out.println("iten seleccionado "+jComboBox1.getSelectedItem());
     }//GEN-LAST:event_jComboBox1ActionPerformed
 

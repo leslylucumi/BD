@@ -16,8 +16,9 @@ import java.sql.Statement;
  * @author Acer
  */
 public class Animal {
+
     private int id;
-    private String edad;
+    private int edad;
     private String imganimalcara;
     private String imganimalcuerpo;
     private String imganimal;
@@ -25,13 +26,12 @@ public class Animal {
     private String descripcion;
     private String nombre;
     private String peso;
-    private  int id_Especie;
+    private int id_Especie;
     private int id_Habitat;
-    private  int id_Alimentacion;
-    
-  //  private String dirc;
+    private int id_Alimentacion;
 
-    public Animal(int id, String edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
+    //  private String dirc;
+    public Animal(int id, int edad, String imganimalcara, String imganimalcuerpo, String imganimal, String genero, String descripcion, String nombre, String peso, int id_Especie, int id_Habitat, int id_Alimentacion) {
         this.id = id;
         this.edad = edad;
         this.imganimalcara = imganimalcara;
@@ -78,13 +78,11 @@ public class Animal {
         this.id_Alimentacion = id_Alimentacion;
     }
 
-   
-
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
@@ -152,46 +150,45 @@ public class Animal {
         return "Animal{" + "id=" + id + ", edad=" + edad + ", imganimalcara=" + imganimalcara + ", imganimalcuerpo=" + imganimalcuerpo + ", imganimal=" + imganimal + ", genero=" + genero + ", descripcion=" + descripcion + ", nombre=" + nombre + ", peso=" + peso + ", id_Especie=" + id_Especie + ", id_Habitat=" + id_Habitat + ", id_Alimentacion=" + id_Alimentacion + '}';
     }
 
-   
-    
-    public boolean insertarAnimal(Animal obje,String sql) {
-          
-         boolean t=false;
+    public boolean insertarAnimal(Animal obje, String sql) {
+
+        boolean t = false;
         FileInputStream fis1 = null;
         FileInputStream fis2 = null;
         FileInputStream fis3 = null;
         PreparedStatement ps = null;
-        ConnectBD obj=new ConnectBD();
+        ConnectBD obj = new ConnectBD();
         try {
-            if(obj.crearConexion()){
-            obj.getConexion().setAutoCommit(false);
-             File file1=new File(obje.getImganimalcara());
-             File file2=new File(obje.getImganimalcuerpo());
-             File file3=new File(obje.getImganimal());
-             fis1=new FileInputStream(file1);
-             fis2=new FileInputStream(file2);
-             fis3=new FileInputStream(file3);
-             ps=obj.getConexion().prepareStatement(sql);
-             ps.setInt(1,obje.getId());
-              ps.setString(2,obje.getEdad());
-              ps.setBinaryStream(3, fis1, (int) file1.length());
-              ps.setBinaryStream(4, fis2, (int) file2.length());
-              ps.setBinaryStream(5, fis3, (int) file3.length());
-              ps.setString(6,obje.getGenero());
-              ps.setString(7,obje.getDescripcion());
-               ps.setString(8,obje.getNombre());
-               ps.setString(9,obje.getPeso());
-               ps.setInt(10,obje.getId_Especie());
-                ps.setInt(11,obje.getId_Habitat());
-                 ps.setInt(12,obje.getId_Alimentacion());
-                
+            if (obj.crearConexion()) {
+                obj.getConexion().setAutoCommit(false);
+                File file1 = new File(obje.getImganimalcara());
+                File file2 = new File(obje.getImganimalcuerpo());
+                File file3 = new File(obje.getImganimal());
+                System.out.println("nn "+file1.getPath());
+                fis1 = new FileInputStream(file1);
+                fis2 = new FileInputStream(file2);
+                fis3 = new FileInputStream(file3);
+                ps = obj.getConexion().prepareStatement(sql);
+                ps.setInt(1, obje.getId());
+                ps.setInt(2, obje.getEdad());
+                ps.setBinaryStream(3, fis1, (int) file1.length());
+                ps.setBinaryStream(4, fis2, (int) file2.length());
+                ps.setBinaryStream(5, fis3, (int) file3.length());
+                ps.setString(6, obje.getGenero());
+                ps.setString(7, obje.getDescripcion());
+                ps.setString(8, obje.getNombre());
+                ps.setString(9, obje.getPeso());
+                ps.setInt(10, obje.getId_Especie());
+                ps.setInt(11, obje.getId_Habitat());
+                ps.setInt(12, obje.getId_Alimentacion());
+
                 ps.executeUpdate();
                 obj.getConexion().commit();
-                t=true;
+                t = true;
             }
-        }catch (Exception ex) {
-            t=false;
-            System.out.println("Error "+ex.toString());
+        } catch (Exception ex) {
+            t = false;
+            System.out.println("Error " + ex.toString());
         } finally {
             try {
                 ps.close();
@@ -199,12 +196,11 @@ public class Animal {
                 fis2.close();
                 fis3.close();
             } catch (Exception ex) {
-                t=false;
-                System.out.println("Errro "+ex.toString());
+                t = false;
+                System.out.println("Errro " + ex.toString());
             }
         }
         return t;
 
-        
-}
+    }
 }
