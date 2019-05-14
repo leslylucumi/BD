@@ -315,7 +315,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
         String genero;
         String descripcion;
         String nombre;
-        String peso;
+        double peso;
         int id_Especie;
         int id_Habitat;
         int id_Alimentacion;
@@ -349,7 +349,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
         genero = Jgeneroa.getText();
         descripcion = Jdescripa.getText();
         nombre = Jnombre.getText();
-        peso = Jpesoa.getText();
+        peso = Double.parseDouble(Jpesoa.getText());
 
         ControlAnimal objca = new ControlAnimal();
         Animal obje = new Animal(id_animal, edad, imganimalcara, imganimalcuerpo, imganimal, genero, descripcion, nombre, peso, id_Especie, id_Habitat, id_Alimentacion);

@@ -334,7 +334,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
             Jgeneroa.setText(objan.getGenero());
             Jdescripa.setText(objan.getDescripcion());
             Jnombre.setText(objan.getNombre());
-            Jpesoa.setText(objan.getPeso());
+            Jpesoa.setText(objan.getPeso() + "");
 
             int id_Alimentacion = 0;
             int id_Especie = 0;
@@ -403,7 +403,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
         String genero = null;
         String descripcion = null;
         String nombre = null;
-        String peso = null;
+        Double peso = null;
         int id_especie_animal = 0;
         int id_habitat_animal = 0;
         int id_clasif_animal = 0;
@@ -419,7 +419,7 @@ public class ModificarAnimal extends javax.swing.JFrame {
         genero = Jgeneroa.getText();
         descripcion = Jdescripa.getText();
         nombre = Jnombre.getText();
-        peso = Jpesoa.getText();
+        peso = Double.parseDouble(Jpesoa.getText());
         int id_Alimentacion = 0;
         int id_Especie = 0;
         int id_Habitat = 0;
