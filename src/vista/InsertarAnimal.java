@@ -24,6 +24,13 @@ public class InsertarAnimal extends javax.swing.JFrame {
     /**
      * Creates new form InsertarAnimal
      */
+    LinkedList<Especie> le;
+    LinkedList<Habitat> lh ;
+    LinkedList<Alimentacion> lA;
+    String esp;
+    String habi;
+    String alim;
+
     public InsertarAnimal() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -90,6 +97,12 @@ public class InsertarAnimal extends javax.swing.JFrame {
         jLabel7.setText("Nombre");
 
         jLabel8.setText("Peso");
+
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         Batrasanimal.setText("Atras");
         Batrasanimal.addActionListener(new java.awt.event.ActionListener() {
@@ -249,26 +262,24 @@ public class InsertarAnimal extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
         ControlEspecie objce = new ControlEspecie();
-        LinkedList<Especie> le = objce.consultarEspecies();
+        le = objce.consultarEspecies();
 
         for (int i = 0; i < le.size(); i++) {
             jComboBox1.addItem(le.get(i).getNombreE());
 
         }
-        
-            ControlHabitat objch = new ControlHabitat();
-        LinkedList<Habitat> lh = objch.consultarHabitat();
+
+        ControlHabitat objch = new ControlHabitat();
+         lh = objch.consultarHabitat();
 
         for (int i = 0; i < lh.size(); i++) {
             jComboBox4.addItem(lh.get(i).getNombreH());
 
         }
-        
+
         ///////////
-        
-        
-           ControlAlimentacion objcA = new ControlAlimentacion();
-        LinkedList<Alimentacion> lA = objcA.consultarAlimentacion();
+        ControlAlimentacion objcA = new ControlAlimentacion();
+         lA = objcA.consultarAlimentacion();
 
         for (int i = 0; i < lA.size(); i++) {
             jComboBox3.addItem(lA.get(i).getNombreA());
@@ -292,88 +303,76 @@ public class InsertarAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_BlimpiaranimalActionPerformed
 
     private void BagregaranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BagregaranimalActionPerformed
-             
-        
-      String temp; 
-      String temp2; 
-      String temp3; 
-     int id_animal;
-    String edad;
-     String imganimalcara;
-     String imganimalcuerpo;
-     String imganimal;
-     String genero;
-     String descripcion;
-     String nombre;
-     String peso;
-     int id_Especie;
-     int id_Habitat;
-     int id_Alimentacion;
-     id_Alimentacion=0;
-     id_Especie=0;
-     id_Habitat=0;
-     
-     temp3=jComboBox1.getToolTipText();
-     temp2=jComboBox4.getToolTipText();
-     temp=jComboBox3.getToolTipText();
-    ///// 
-     ControlAlimentacion objcA = new ControlAlimentacion();
-     LinkedList<Alimentacion> lA = objcA.consultarAlimentacion();
-     for (int i = 0; i < lA.size(); i++) {
-           if (temp==lA.get(i).getNombreA()){
-           id_Alimentacion=lA.get(i).getId();
-           }
 
-        }
-     
-     ///////////////
-      ControlHabitat objch = new ControlHabitat();
-      LinkedList<Habitat> lh = objch.consultarHabitat();
+        String temp;
+        String temp2;
+        String temp3;
+        int id_animal;
+        String edad;
+        String imganimalcara;
+        String imganimalcuerpo;
+        String imganimal;
+        String genero;
+        String descripcion;
+        String nombre;
+        String peso;
+        int id_Especie;
+        int id_Habitat;
+        int id_Alimentacion;
+        id_Alimentacion = 0;
+        id_Especie = 0;
+        id_Habitat = 0;
 
-        for (int i = 0; i < lh.size(); i++) {
-            if(temp2==lh.get(i).getNombreH()){
-            
-            id_Habitat= lh.get(i).getId();
-            }
-
-        }
         
-        
-        ///////////////
-        
-               ControlEspecie objce = new ControlEspecie();
-        LinkedList<Especie> le = objce.consultarEspecies();
-
         for (int i = 0; i < le.size(); i++) {
-          if(temp3==le.get(i).getNombreE()){
-              id_Especie=le.get(i).getId();
-          
-          }
-
+            if(esp.equals(le.get(i).getNombreE())) {
+                id_Especie=le.get(i).getId();
+            }
+            
         }
         
-     id_animal=Integer.parseInt(Jid.getText());
-     edad=Jedada.getText();
-     imganimalcara=Jimgca.getText();
-     imganimalcuerpo=Jimgcua.getText();
-     imganimal=Jimga.getText();
-     genero=Jgeneroa.getText();
-     descripcion=Jdescripa.getText();
-     nombre=Jnombre.getText();
-     peso=Jpesoa.getText();
-     
-     ControlAnimal objca=new ControlAnimal();
-       Animal obje=new Animal(id_animal, edad, imganimalcara, imganimalcuerpo, imganimal, genero, descripcion, nombre, peso, id_Especie, id_Habitat, id_Alimentacion);
-        boolean f=objca.insertarAnimal(obje);
         
-        if(f){
-            
+        for (int i = 0; i < lA.size(); i++) {
+            if(alim.equals(lA.get(i).getNombreA())) {
+                id_Especie=lA.get(i).getId();
+            }   
+        }
+        
+            for (int i = 0; i < lh.size(); i++) {
+            if(habi.equals(lh.get(i).getNombreH())) {
+                id_Especie=lh.get(i).getId();
+            }
+        ///// 
+        id_animal = Integer.parseInt(Jid.getText());
+        edad = Jedada.getText();
+        imganimalcara = Jimgca.getText();
+        imganimalcuerpo = Jimgcua.getText();
+        imganimal = Jimga.getText();
+        genero = Jgeneroa.getText();
+        descripcion = Jdescripa.getText();
+        nombre = Jnombre.getText();
+        peso = Jpesoa.getText();
+        
+
+        ControlAnimal objca = new ControlAnimal();
+        Animal obje = new Animal(id_animal, edad, imganimalcara, imganimalcuerpo, imganimal, genero, descripcion, nombre, peso, id_Especie, id_Habitat, id_Alimentacion);
+        boolean f = objca.insertarAnimal(obje);
+
+        if (f) {
+
             System.out.println("Se inserto el Animal");
-        }else{
+        } else {
             System.out.println("No se inserto el Animal");
         }
-     
+
     }//GEN-LAST:event_BagregaranimalActionPerformed
+    }
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        esp = (String) jComboBox1.getSelectedItem();
+         alim = (String) jComboBox3.getSelectedItem();
+          habi = (String) jComboBox4.getSelectedItem();
+        // System.out.println("iten seleccionado "+jComboBox1.getSelectedItem());
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
