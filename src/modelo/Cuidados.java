@@ -39,7 +39,7 @@ public class Cuidados {
 
     @Override
     public String toString() {
-        return "Cuiados{" + "id_animal_cuidador=" + id_animal_cuidador + ", id_cuidador_animal=" + id_cuidador_animal + '}';
+        return "Cuidados{" + "id_animal_cuidador=" + id_animal_cuidador + ", id_cuidador_animal=" + id_cuidador_animal + '}';
     }
    
    public boolean insertarCuidado(String sql) {

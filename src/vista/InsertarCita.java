@@ -125,7 +125,7 @@ public class InsertarCita extends javax.swing.JFrame {
             
             System.out.println("Se inserto la Cita");
         }else{
-            System.out.println("No se inserto el Cita");
+            System.out.println("No se inserto la Cita");
         }
      
      
