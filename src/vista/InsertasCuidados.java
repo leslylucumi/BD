@@ -5,6 +5,9 @@
  */
 package vista;
 
+import control.Controlcuidados;
+import modelo.Cuidados;
+
 /**
  *
  * @author LeslyLC
@@ -121,6 +124,16 @@ public class InsertasCuidados extends javax.swing.JFrame {
      int id_cuidador_animal;
      id_animal_cuidador=Integer.parseInt(Jid_animal_cuidador.getText());
      id_cuidador_animal=Integer.parseInt(Jid_cuidador_animal.getText());
+     Controlcuidados objce=new Controlcuidados();
+       Cuidados objc=new Cuidados(id_animal_cuidador, id_cuidador_animal);
+        boolean f=objce.insertarCuidado(objc);
+        
+        if(f){
+            
+            System.out.println("Se inserto el cuidado");
+        }else{
+            System.out.println("No se inserto el Cuidado");
+        }
      
 
     }//GEN-LAST:event_jButton2ActionPerformed
