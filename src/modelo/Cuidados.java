@@ -12,11 +12,11 @@ import java.sql.Statement;
  *
  * @author LeslyLC
  */
-public class Cuiados {
+public class Cuidados {
   private  int id_animal_cuidador;
    private  int id_cuidador_animal;
 
-    public Cuiados(int id_animal_cuidador, int id_cuidador_animal) {
+    public Cuidados(int id_animal_cuidador, int id_cuidador_animal) {
         this.id_animal_cuidador = id_animal_cuidador;
         this.id_cuidador_animal = id_cuidador_animal;
     }
