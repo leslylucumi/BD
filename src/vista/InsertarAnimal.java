@@ -9,7 +9,9 @@ import control.ControlAlimentacion;
 import control.ControlAnimal;
 import control.ControlEspecie;
 import control.ControlHabitat;
+import java.io.File;
 import java.util.LinkedList;
+import javax.swing.JFileChooser;
 import modelo.Alimentacion;
 import modelo.Animal;
 import modelo.Especie;
@@ -63,10 +65,10 @@ public class InsertarAnimal extends javax.swing.JFrame {
         jComboBox3 = new javax.swing.JComboBox();
         jComboBox4 = new javax.swing.JComboBox();
         Jedada = new javax.swing.JTextField();
-        Jimgca = new javax.swing.JTextField();
-        Jimgcua = new javax.swing.JTextField();
+        rutaimgcara = new javax.swing.JTextField();
+        rutaimgcuerpo = new javax.swing.JTextField();
         Jid = new javax.swing.JTextField();
-        Jimga = new javax.swing.JTextField();
+        rutaimgopcional = new javax.swing.JTextField();
         Jdescripa = new javax.swing.JTextField();
         Jgeneroa = new javax.swing.JTextField();
         Jpesoa = new javax.swing.JTextField();
@@ -74,6 +76,9 @@ public class InsertarAnimal extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        Babririmgcara = new javax.swing.JButton();
+        Babririmgcuerpo = new javax.swing.JButton();
+        Babririmgopcional = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -139,6 +144,27 @@ public class InsertarAnimal extends javax.swing.JFrame {
 
         jLabel11.setText("Alimentación");
 
+        Babririmgcara.setText("Abrir");
+        Babririmgcara.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BabririmgcaraActionPerformed(evt);
+            }
+        });
+
+        Babririmgcuerpo.setText("Abrir");
+        Babririmgcuerpo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BabririmgcuerpoActionPerformed(evt);
+            }
+        });
+
+        Babririmgopcional.setText("Abrir");
+        Babririmgopcional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BabririmgopcionalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,36 +187,46 @@ public class InsertarAnimal extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Jid, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Jimga, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Jimgcua, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Jdescripa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Jgeneroa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Jnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Jpesoa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Jedada, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Jimgca, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(103, 103, 103)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11))
-                                .addGap(23, 23, 23)
+                                    .addComponent(Jid, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Jedada, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(rutaimgopcional, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(rutaimgcuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Jdescripa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Jgeneroa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Jnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Jpesoa, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Babririmgcuerpo)
+                                            .addComponent(Babririmgopcional))))
+                                .addGap(24, 24, 24)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel11))
+                                        .addGap(23, 23, 23)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Bagregaranimal)
+                                            .addComponent(Batrasanimal))
+                                        .addGap(53, 53, 53)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Bcerraranimal)
+                                            .addComponent(Blimpiaranimal)))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Bagregaranimal)
-                                    .addComponent(Batrasanimal))
-                                .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Bcerraranimal)
-                                    .addComponent(Blimpiaranimal))))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                                .addComponent(rutaimgcara, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Babririmgcara)))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,15 +259,18 @@ public class InsertarAnimal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(Jimgca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
+                            .addComponent(rutaimgcara, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Babririmgcara))
+                        .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(Jimgcua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rutaimgcuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Babririmgcuerpo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(Jimga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rutaimgopcional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Babririmgopcional))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -343,9 +382,9 @@ public class InsertarAnimal extends javax.swing.JFrame {
         ///// 
         id_animal = Integer.parseInt(Jid.getText());
         edad = Integer.parseInt(Jedada.getText());
-        imganimalcara = Jimgca.getText();
-        imganimalcuerpo = Jimgcua.getText();
-        imganimal = Jimga.getText();
+        imganimalcara = rutaimgcara.getText();
+        imganimalcuerpo = rutaimgcuerpo.getText();
+        imganimal = rutaimgopcional.getText();
         genero = Jgeneroa.getText();
         descripcion = Jdescripa.getText();
         nombre = Jnombre.getText();
@@ -370,6 +409,38 @@ public class InsertarAnimal extends javax.swing.JFrame {
         habi = (String) jComboBox4.getSelectedItem();
         // System.out.println("iten seleccionado "+jComboBox1.getSelectedItem());
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void BabririmgcaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BabririmgcaraActionPerformed
+        JFileChooser jf = new JFileChooser();
+        jf.showOpenDialog(this);
+        File archivo = jf.getSelectedFile();
+        
+        if(archivo != null){
+            rutaimgcara.setText(archivo.getAbsolutePath());
+        }
+        
+    }//GEN-LAST:event_BabririmgcaraActionPerformed
+
+    private void BabririmgcuerpoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BabririmgcuerpoActionPerformed
+        JFileChooser jf = new JFileChooser();
+        jf.showOpenDialog(this);
+        File archivo = jf.getSelectedFile();
+        
+        if(archivo != null){
+            rutaimgcuerpo.setText(archivo.getAbsolutePath());
+        }
+    }//GEN-LAST:event_BabririmgcuerpoActionPerformed
+
+    private void BabririmgopcionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BabririmgopcionalActionPerformed
+        JFileChooser jf = new JFileChooser();
+        jf.showOpenDialog(this);
+        File archivo = jf.getSelectedFile();
+        
+        if(archivo != null){
+            rutaimgopcional.setText(archivo.getAbsolutePath());
+        }  
+        
+    }//GEN-LAST:event_BabririmgopcionalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,6 +481,9 @@ public class InsertarAnimal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Babririmgcara;
+    private javax.swing.JButton Babririmgcuerpo;
+    private javax.swing.JButton Babririmgopcional;
     private javax.swing.JButton Bagregaranimal;
     private javax.swing.JButton Batrasanimal;
     private javax.swing.JButton Bcerraranimal;
@@ -419,9 +493,6 @@ public class InsertarAnimal extends javax.swing.JFrame {
     private javax.swing.JTextField Jedada5;
     private javax.swing.JTextField Jgeneroa;
     private javax.swing.JTextField Jid;
-    private javax.swing.JTextField Jimga;
-    private javax.swing.JTextField Jimgca;
-    private javax.swing.JTextField Jimgcua;
     private javax.swing.JTextField Jnombre;
     private javax.swing.JTextField Jpesoa;
     private javax.swing.JComboBox jComboBox1;
@@ -439,5 +510,8 @@ public class InsertarAnimal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField rutaimgcara;
+    private javax.swing.JTextField rutaimgcuerpo;
+    private javax.swing.JTextField rutaimgopcional;
     // End of variables declaration//GEN-END:variables
 }
