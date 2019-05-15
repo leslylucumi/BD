@@ -7,7 +7,10 @@ package control;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedList;
+import modelo.ConnectBD;
+import modelo.Cuidador;
 import modelo.Especie;
 import modelo.Habitat;
 
@@ -42,4 +45,57 @@ public class ControlHabitat {
         return le;
     }
     
+      public Habitat ModificarHabitat(int id) {
+          ConnectBD objCon = new ConnectBD();
+          String sql = "select * from habitats where id_habitat=" + id + "";
+        ResultSet rs = null;
+        Habitat objh = null;
+       if (objCon.crearConexion()) {
+            try {
+                Statement stat = objCon.getConexion().createStatement();
+                rs = stat.executeQuery(sql);
+                while (rs.next()) {
+                    objh = new Habitat (rs.getString(2), rs.getString(3));
+
+                    System.out.println(rs.getString(2));
+                }
+                objCon.getConexion().close();
+            } catch (Exception e) {
+
+                System.out.println(e.toString());
+            }
+        }
+
+        return objh;
+
+      }
+      public boolean ModificarHabitats(Habitat objc, int id) {
+        boolean c = false;
+
+        try {
+
+//            String descripcion;
+            
+           // String id_veterinario;
+           
+//            if (objc.getDescripcion()!= null) {
+//                descripcion = "'" + objc.getDescripcion()+ "'";
+//            } else {
+//                descripcion = null;
+//            }
+            
+
+            String sql = "update habitats set zona ='" + objc.getNombreH()+ "', descripcion_habitat ='" + objc.getDescripcion()
+                        + "' where id_habitat=" + id; 
+            
+            c = objc.ModificarHabitat(sql);
+
+        } catch (Exception e) {
+
+            System.out.println(e.toString());
+        }
+
+        return c;
+
+    }
 }

@@ -62,34 +62,65 @@
                       </Group>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Jid" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="Jimga" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="Jimgcua" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="Jdescripa" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="Jgeneroa" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="Jnombre" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                              <Component id="Jpesoa" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="Jedada" min="-2" pref="111" max="-2" attributes="0"/>
-                          <Component id="Jimgca" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                                  <Component id="Jid" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Component id="Jedada" min="-2" pref="111" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="rutaimgopcional" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="rutaimgcuerpo" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="Jdescripa" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="Jgeneroa" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="Jnombre" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                                          <Component id="Jpesoa" alignment="1" min="-2" pref="111" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Babririmgcuerpo" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Babririmgopcional" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+=======
                                   <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+>>>>>>> a269ce45d184f425bbf9d305f2ed9b43f6f03248
                               </Group>
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox3" min="-2" pref="176" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" pref="176" max="-2" attributes="0"/>
-                                  <Component id="jComboBox4" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jComboBox3" min="-2" pref="176" max="-2" attributes="0"/>
+                                          <Component id="jComboBox1" min="-2" pref="176" max="-2" attributes="0"/>
+                                          <Component id="jComboBox4" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Bagregaranimal" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Batrasanimal" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Bcerraranimal" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Blimpiaranimal" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
+                              <Component id="rutaimgcara" min="-2" pref="111" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Babririmgcara" min="-2" max="-2" attributes="0"/>
+=======
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="Bagregaranimal" min="-2" max="-2" attributes="0"/>
                                   <Component id="Batrasanimal" min="-2" max="-2" attributes="0"/>
@@ -104,11 +135,16 @@
                                       <Component id="Blimpiaranimal" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+>>>>>>> a269ce45d184f425bbf9d305f2ed9b43f6f03248
                           </Group>
                       </Group>
                   </Group>
               </Group>
+<<<<<<< HEAD
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+=======
               <EmptySpace pref="55" max="32767" attributes="0"/>
+>>>>>>> a269ce45d184f425bbf9d305f2ed9b43f6f03248
           </Group>
       </Group>
     </DimensionLayout>
@@ -151,17 +187,20 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Jimgca" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rutaimgcara" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Babririmgcara" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Jimgcua" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rutaimgcuerpo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Babririmgcuerpo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Jimga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rutaimgopcional" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Babririmgopcional" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -296,13 +335,13 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Jedada">
     </Component>
-    <Component class="javax.swing.JTextField" name="Jimgca">
+    <Component class="javax.swing.JTextField" name="rutaimgcara">
     </Component>
-    <Component class="javax.swing.JTextField" name="Jimgcua">
+    <Component class="javax.swing.JTextField" name="rutaimgcuerpo">
     </Component>
     <Component class="javax.swing.JTextField" name="Jid">
     </Component>
-    <Component class="javax.swing.JTextField" name="Jimga">
+    <Component class="javax.swing.JTextField" name="rutaimgopcional">
     </Component>
     <Component class="javax.swing.JTextField" name="Jdescripa">
     </Component>
@@ -330,10 +369,36 @@
         <Property name="text" type="java.lang.String" value="Alimentaci&#xf3;n"/>
       </Properties>
     </Component>
+<<<<<<< HEAD
+    <Component class="javax.swing.JButton" name="Babririmgcara">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Abrir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BabririmgcaraActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Babririmgcuerpo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Abrir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BabririmgcuerpoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Babririmgopcional">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Abrir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BabririmgopcionalActionPerformed"/>
+      </Events>
+=======
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
         <Property name="text" type="java.lang.String" value="Habitad"/>
       </Properties>
+>>>>>>> a269ce45d184f425bbf9d305f2ed9b43f6f03248
     </Component>
   </SubComponents>
 </Form>

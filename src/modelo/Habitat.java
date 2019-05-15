@@ -16,21 +16,25 @@ import modelo.ConnectBD;
  */
 public class Habitat {
     private int id;
-    private String nombreH;
+    private String NombreH; 
     private String zona; 
     private String descripcion; 
 
-    public Habitat(int id, String nombreH) {
+    public Habitat(int id, String NombreH) {
         this.id = id;
-        this.nombreH = nombreH;
+        this.NombreH = NombreH;
     }
     
 
-    public Habitat(int id, String nombreH, String zona, String descripcion) {
+    public Habitat(int id, String zona,String NombreH, String descripcion) {
         this.id = id;
-        this.nombreH = nombreH;
         this.zona = zona;
         this.descripcion = descripcion;
+    }
+
+    public Habitat(String NombreH, String descripcion) {
+        this.NombreH = NombreH;
+        this.descripcion = descripcion;  
     }
 
     public Habitat() {
@@ -42,14 +46,6 @@ public class Habitat {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNombreH() {
-        return nombreH;
-    }
-
-    public void setNombreH(String nombreH) {
-        this.nombreH = nombreH;
     }
 
     public String getZona() {
@@ -68,10 +64,19 @@ public class Habitat {
         this.descripcion = descripcion;
     }
 
+    public String getNombreH() {
+        return NombreH;
+    }
+
+    public void setNombreH(String NombreH) {
+        this.NombreH = NombreH;
+    }
+
     @Override
     public String toString() {
-        return "habitat{" + "id=" + id + ", nombreH=" + nombreH + ", zona=" + zona + ", descripcion=" + descripcion + '}';
+        return "Habitat{" + "id=" + id + ", NombreH=" + NombreH + ", zona=" + zona + ", descripcion=" + descripcion + '}';
     }
+   
     
     public ResultSet consultarhabitat(String sql) {
         
@@ -85,6 +90,26 @@ public class Habitat {
             }
         }
         return rs;
+    }
+
+    public boolean ModificarHabitat(String sql) {
+        ConnectBD objCon = new ConnectBD();
+        boolean a = false;
+        
+       if (objCon.crearConexion()) {
+       try {
+           Statement stat;
+           stat = objCon.getConexion().createStatement();
+           stat.executeUpdate(sql);
+           a=true;
+       } catch (SQLException ex) {
+           ex.printStackTrace();
+           System.out.println(ex.toString());
+           return false;
+       }
+         
+    }  
+       return a;
     }
     
     
