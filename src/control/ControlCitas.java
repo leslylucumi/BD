@@ -14,7 +14,7 @@ import modelo.Citas;
 public class ControlCitas {
     
       public boolean insertarCita(Citas obje) {
-        String sql="Insert into veterinarios (id_animal_veterinario,id_veterinario_animal)"+
+        String sql="Insert into citas (id_animal_veterinario,id_veterinario_animal)"+
                 "value('"+obje.getId_animal_veterinario()+"','"+obje.getId_veterinario_animal()+"')";
         
         boolean f=false;
