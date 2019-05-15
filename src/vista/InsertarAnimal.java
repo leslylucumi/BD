@@ -445,34 +445,34 @@ public class InsertarAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void BabririmgcaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BabririmgcaraActionPerformed
-        JFileChooser jf = new JFileChooser();
-        jf.showOpenDialog(this);
-        File archivo = jf.getSelectedFile();
-        
-        if(archivo != null){
-            rutaimgcara.setText(archivo.getAbsolutePath());
-        }
+//        JFileChooser jf = new JFileChooser();
+//        jf.showOpenDialog(this);
+//        File archivo = jf.getSelectedFile();
+//        
+//        if(archivo != null){
+//            rutaimgcara.setText(archivo.getAbsolutePath());
+//        }
         
     }//GEN-LAST:event_BabririmgcaraActionPerformed
 
     private void BabririmgcuerpoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BabririmgcuerpoActionPerformed
-        JFileChooser jf = new JFileChooser();
-        jf.showOpenDialog(this);
-        File archivo = jf.getSelectedFile();
-        
-        if(archivo != null){
-            rutaimgcuerpo.setText(archivo.getAbsolutePath());
-        }
+//        JFileChooser jf = new JFileChooser();
+//        jf.showOpenDialog(this);
+//        File archivo = jf.getSelectedFile();
+//        
+//        if(archivo != null){
+//            rutaimgcuerpo.setText(archivo.getAbsolutePath());
+//        }
     }//GEN-LAST:event_BabririmgcuerpoActionPerformed
 
     private void BabririmgopcionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BabririmgopcionalActionPerformed
-        JFileChooser jf = new JFileChooser();
-        jf.showOpenDialog(this);
-        File archivo = jf.getSelectedFile();
-        
-        if(archivo != null){
-            rutaimgopcional.setText(archivo.getAbsolutePath());
-        }  
+//        JFileChooser jf = new JFileChooser();
+//        jf.showOpenDialog(this);
+//        File archivo = jf.getSelectedFile();
+//        
+//        if(archivo != null){
+//            rutaimgopcional.setText(archivo.getAbsolutePath());
+//        }  
         
     }//GEN-LAST:event_BabririmgopcionalActionPerformed
 
