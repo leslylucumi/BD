@@ -5,16 +5,19 @@
  */
 package vista;
 
+import control.Controlcuidados;
+import modelo.Cuidados;
+
 /**
  *
  * @author LeslyLC
  */
-public class InsertasCuidados extends javax.swing.JFrame {
+public class InsertarCuidados extends javax.swing.JFrame {
 
     /**
      * Creates new form InsertasCuidados
      */
-    public InsertasCuidados() {
+    public InsertarCuidados() {
         initComponents();
     }
 
@@ -69,7 +72,7 @@ public class InsertasCuidados extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addGap(36, 36, 36)
@@ -113,15 +116,25 @@ public class InsertasCuidados extends javax.swing.JFrame {
     }//GEN-LAST:event_Jid_cuidador_animalActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
      int id_animal_cuidador;
      int id_cuidador_animal;
      id_animal_cuidador=Integer.parseInt(Jid_animal_cuidador.getText());
      id_cuidador_animal=Integer.parseInt(Jid_cuidador_animal.getText());
+     Controlcuidados objce=new Controlcuidados();
+     Cuidados objc=new Cuidados(id_animal_cuidador, id_cuidador_animal);
+     boolean f=objce.insertarCuidado(objc);
+        
+        if(f){
+            
+            System.out.println("Se inserto el cuidado");
+        }else{
+            System.out.println("No se inserto el Cuidado");
+        }
      
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+ 
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -142,20 +155,21 @@ public class InsertasCuidados extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InsertasCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InsertasCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InsertasCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InsertasCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertarCuidados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InsertasCuidados().setVisible(true);
+                new InsertarCuidados().setVisible(true);
             }
         });
     }

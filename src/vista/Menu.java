@@ -5,6 +5,8 @@
  */
 package vista;
 
+import vista.InsertarAnimal;
+
 /**
  *
  * @author Ángela
