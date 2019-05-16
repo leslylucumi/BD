@@ -19,8 +19,9 @@ public class ModificarHabitat extends javax.swing.JFrame {
      */
     public ModificarHabitat() {
         initComponents();
-         jZona.setEnabled(false);
-         jDescripcion.setEnabled(false);
+        jZona.setEnabled(false);
+        jDescripcion.setEnabled(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**

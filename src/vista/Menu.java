@@ -30,32 +30,32 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Bpasaranimal = new javax.swing.JButton();
-        Bpasarcuidador = new javax.swing.JButton();
-        Bpasarveterinario = new javax.swing.JButton();
+        Bpasarmodificar = new javax.swing.JButton();
+        Bpasarconsultas = new javax.swing.JButton();
+        Bpasarinsertar = new javax.swing.JButton();
         Bcerrarmenu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Bpasaranimal.setText("animal");
-        Bpasaranimal.addActionListener(new java.awt.event.ActionListener() {
+        Bpasarmodificar.setText("Modificar");
+        Bpasarmodificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BpasaranimalActionPerformed(evt);
+                BpasarmodificarActionPerformed(evt);
             }
         });
 
-        Bpasarcuidador.setText("cuidador");
-        Bpasarcuidador.addActionListener(new java.awt.event.ActionListener() {
+        Bpasarconsultas.setText("Consultas");
+        Bpasarconsultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BpasarcuidadorActionPerformed(evt);
+                BpasarconsultasActionPerformed(evt);
             }
         });
 
-        Bpasarveterinario.setText("veterinario");
-        Bpasarveterinario.addActionListener(new java.awt.event.ActionListener() {
+        Bpasarinsertar.setText("Insertar");
+        Bpasarinsertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BpasarveterinarioActionPerformed(evt);
+                BpasarinsertarActionPerformed(evt);
             }
         });
 
@@ -79,16 +79,16 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(227, 227, 227)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(Bpasaranimal, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addComponent(Bpasarveterinario)
-                        .addGap(68, 68, 68)
-                        .addComponent(Bpasarcuidador, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addComponent(Bcerrarmenu)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                        .addGap(43, 43, 43)
+                        .addComponent(Bpasarmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Bcerrarmenu)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Bpasarinsertar)
+                                .addGap(52, 52, 52)
+                                .addComponent(Bpasarconsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,9 +97,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Bpasarveterinario)
-                    .addComponent(Bpasaranimal, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bpasarcuidador))
+                    .addComponent(Bpasarinsertar)
+                    .addComponent(Bpasarmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bpasarconsultas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(Bcerrarmenu)
                 .addGap(34, 34, 34))
@@ -108,23 +108,23 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BpasarveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BpasarveterinarioActionPerformed
-        InsertarVeterinario abrir = new InsertarVeterinario();
+    private void BpasarinsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BpasarinsertarActionPerformed
+        OpcionesInsertar abrir = new OpcionesInsertar();
         abrir.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BpasarveterinarioActionPerformed
+    }//GEN-LAST:event_BpasarinsertarActionPerformed
 
-    private void BpasarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BpasarcuidadorActionPerformed
-        InsertarCuidador abrir = new InsertarCuidador();
+    private void BpasarconsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BpasarconsultasActionPerformed
+        OpcionesConsultar abrir = new OpcionesConsultar();
         abrir.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BpasarcuidadorActionPerformed
+    }//GEN-LAST:event_BpasarconsultasActionPerformed
 
-    private void BpasaranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BpasaranimalActionPerformed
-        InsertarAnimal abrir = new InsertarAnimal();
+    private void BpasarmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BpasarmodificarActionPerformed
+        OpcionesModificar abrir = new OpcionesModificar();
         abrir.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_BpasaranimalActionPerformed
+    }//GEN-LAST:event_BpasarmodificarActionPerformed
 
     private void BcerrarmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BcerrarmenuActionPerformed
         System.exit(0);
@@ -167,9 +167,9 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bcerrarmenu;
-    private javax.swing.JButton Bpasaranimal;
-    private javax.swing.JButton Bpasarcuidador;
-    private javax.swing.JButton Bpasarveterinario;
+    private javax.swing.JButton Bpasarconsultas;
+    private javax.swing.JButton Bpasarinsertar;
+    private javax.swing.JButton Bpasarmodificar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

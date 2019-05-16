@@ -19,16 +19,16 @@ public class ModificarVeterinario extends javax.swing.JFrame {
      */
     public ModificarVeterinario() {
         initComponents();
-            jNombre1.setEnabled(false);
-            jNombre2.setEnabled(false);
-            jcorreo.setEnabled(false);
-            jtelefono1.setEnabled(false);
-            jtelefono2.setEnabled(false);
-            jApellido1.setEnabled(false);
-            jApellido2.setEnabled(false);
-            jDireccion.setEnabled(false);
-            jEdad.setEnabled(false);
-            this.setLocationRelativeTo(null);
+        jNombre1.setEnabled(false);
+        jNombre2.setEnabled(false);
+        jcorreo.setEnabled(false);
+        jtelefono1.setEnabled(false);
+        jtelefono2.setEnabled(false);
+        jApellido1.setEnabled(false);
+        jApellido2.setEnabled(false);
+        jDireccion.setEnabled(false);
+        jEdad.setEnabled(false);
+        this.setLocationRelativeTo(null);
 
     }
 

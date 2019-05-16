@@ -30,19 +30,20 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                      <Component id="Bpasaranimal" min="-2" pref="85" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="Bpasarveterinario" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                      <Component id="Bpasarcuidador" min="-2" pref="85" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
-                      <Component id="Bcerrarmenu" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="Bpasarmodificar" min="-2" pref="85" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Bcerrarmenu" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="Bpasarinsertar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                              <Component id="Bpasarconsultas" min="-2" pref="85" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="78" max="32767" attributes="0"/>
+              <EmptySpace pref="108" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,9 +54,9 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Bpasarveterinario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Bpasaranimal" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="Bpasarcuidador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bpasarinsertar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bpasarmodificar" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="Bpasarconsultas" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="97" max="32767" attributes="0"/>
               <Component id="Bcerrarmenu" min="-2" max="-2" attributes="0"/>
@@ -65,28 +66,28 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Bpasaranimal">
+    <Component class="javax.swing.JButton" name="Bpasarmodificar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="animal"/>
+        <Property name="text" type="java.lang.String" value="Modificar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BpasaranimalActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BpasarmodificarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Bpasarcuidador">
+    <Component class="javax.swing.JButton" name="Bpasarconsultas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="cuidador"/>
+        <Property name="text" type="java.lang.String" value="Consultas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BpasarcuidadorActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BpasarconsultasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Bpasarveterinario">
+    <Component class="javax.swing.JButton" name="Bpasarinsertar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="veterinario"/>
+        <Property name="text" type="java.lang.String" value="Insertar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BpasarveterinarioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BpasarinsertarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Bcerrarmenu">

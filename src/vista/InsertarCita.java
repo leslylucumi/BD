@@ -19,6 +19,7 @@ public class InsertarCita extends javax.swing.JFrame {
      */
     public InsertarCita() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
