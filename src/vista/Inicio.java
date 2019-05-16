@@ -15,6 +15,7 @@ public class Inicio extends javax.swing.JFrame {
     /** Creates new form Inicio */
     public Inicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to
