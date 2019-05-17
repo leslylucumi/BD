@@ -394,7 +394,7 @@ public class InsertarAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void BatrasanimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatrasanimalActionPerformed
-        Menu abrir = new Menu();
+        OpcionesInsertar abrir = new OpcionesInsertar();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BatrasanimalActionPerformed

@@ -61,12 +61,14 @@ public class ModificarCuidador extends javax.swing.JFrame {
         Jdireccionc = new javax.swing.JTextField();
         Jtelefonoc2 = new javax.swing.JTextField();
         Jedadc = new javax.swing.JTextField();
-        Baceptarcuidador = new javax.swing.JButton();
+        aceptarmodcui = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         Jidcuidador = new javax.swing.JTextField();
-        Batrascuidador = new javax.swing.JButton();
-        Bmodificarcuidador = new javax.swing.JButton();
+        cerrarmodcui = new javax.swing.JButton();
+        modmodcui = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        atrasmodcui = new javax.swing.JButton();
+        limpiarmodcui = new javax.swing.JButton();
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,10 +163,10 @@ public class ModificarCuidador extends javax.swing.JFrame {
             }
         });
 
-        Baceptarcuidador.setText("Aceptar");
-        Baceptarcuidador.addActionListener(new java.awt.event.ActionListener() {
+        aceptarmodcui.setText("Aceptar");
+        aceptarmodcui.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BaceptarcuidadorActionPerformed(evt);
+                aceptarmodcuiActionPerformed(evt);
             }
         });
 
@@ -176,35 +178,41 @@ public class ModificarCuidador extends javax.swing.JFrame {
             }
         });
 
-        Batrascuidador.setText("Cancelar");
-        Batrascuidador.addActionListener(new java.awt.event.ActionListener() {
+        cerrarmodcui.setText("Cerrar");
+        cerrarmodcui.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BatrascuidadorActionPerformed(evt);
+                cerrarmodcuiActionPerformed(evt);
             }
         });
 
-        Bmodificarcuidador.setText("Modificar");
-        Bmodificarcuidador.addActionListener(new java.awt.event.ActionListener() {
+        modmodcui.setText("Modificar");
+        modmodcui.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BmodificarcuidadorActionPerformed(evt);
+                modmodcuiActionPerformed(evt);
             }
         });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setText("MODIFICAR CUIDADOR");
 
+        atrasmodcui.setText("Atras");
+        atrasmodcui.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasmodcuiActionPerformed(evt);
+            }
+        });
+
+        limpiarmodcui.setText("Limpiar");
+        limpiarmodcui.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarmodcuiActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Baceptarcuidador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Bmodificarcuidador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Batrascuidador)
-                .addGap(125, 125, 125))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,6 +264,18 @@ public class ModificarCuidador extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(atrasmodcui, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(aceptarmodcui, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(modmodcui)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cerrarmodcui)
+                    .addComponent(limpiarmodcui))
+                .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,10 +333,14 @@ public class ModificarCuidador extends javax.swing.JFrame {
                                     .addComponent(Jedadc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Bmodificarcuidador)
-                    .addComponent(Baceptarcuidador)
-                    .addComponent(Batrascuidador))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(modmodcui)
+                    .addComponent(aceptarmodcui)
+                    .addComponent(cerrarmodcui))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(atrasmodcui)
+                    .addComponent(limpiarmodcui))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -370,7 +394,7 @@ public class ModificarCuidador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JedadcActionPerformed
 
-    private void BaceptarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaceptarcuidadorActionPerformed
+    private void aceptarmodcuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarmodcuiActionPerformed
      int id_cuidador;
 
         try {
@@ -404,19 +428,17 @@ public class ModificarCuidador extends javax.swing.JFrame {
             e.printStackTrace();
         }
                                          
-    }//GEN-LAST:event_BaceptarcuidadorActionPerformed
+    }//GEN-LAST:event_aceptarmodcuiActionPerformed
 
     private void JidcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JidcuidadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JidcuidadorActionPerformed
 
-    private void BatrascuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatrascuidadorActionPerformed
-        Menu abrir = new Menu();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BatrascuidadorActionPerformed
+    private void cerrarmodcuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarmodcuiActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_cerrarmodcuiActionPerformed
 
-    private void BmodificarcuidadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmodificarcuidadorActionPerformed
+    private void modmodcuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modmodcuiActionPerformed
     // TODO add your handling code here:
         id_cuidador = Integer.parseInt(Jidcuidador.getText());
         String nombrec1 = null;
@@ -464,7 +486,17 @@ public class ModificarCuidador extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }                                              
-    }//GEN-LAST:event_BmodificarcuidadorActionPerformed
+    }//GEN-LAST:event_modmodcuiActionPerformed
+
+    private void atrasmodcuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasmodcuiActionPerformed
+        OpcionesModificar abrir = new OpcionesModificar();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_atrasmodcuiActionPerformed
+
+    private void limpiarmodcuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarmodcuiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_limpiarmodcuiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -505,9 +537,6 @@ public class ModificarCuidador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Baceptarcuidador;
-    private javax.swing.JButton Batrascuidador;
-    private javax.swing.JButton Bmodificarcuidador;
     private javax.swing.JTextField Japellidoc1;
     private javax.swing.JTextField Japellidoc2;
     private javax.swing.JTextField Jcorreoc;
@@ -518,6 +547,9 @@ public class ModificarCuidador extends javax.swing.JFrame {
     private javax.swing.JTextField Jnombrec2;
     private javax.swing.JTextField Jtelefonoc1;
     private javax.swing.JTextField Jtelefonoc2;
+    private javax.swing.JButton aceptarmodcui;
+    private javax.swing.JButton atrasmodcui;
+    private javax.swing.JButton cerrarmodcui;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -532,5 +564,7 @@ public class ModificarCuidador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JButton limpiarmodcui;
+    private javax.swing.JButton modmodcui;
     // End of variables declaration//GEN-END:variables
 }

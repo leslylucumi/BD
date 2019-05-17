@@ -38,11 +38,13 @@ public class ModificarHabitat extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jAceptar = new javax.swing.JButton();
         jModificar = new javax.swing.JButton();
-        jCancelar = new javax.swing.JButton();
+        jCerrar = new javax.swing.JButton();
         jZona = new javax.swing.JTextField();
         jDescripcion = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jId = new javax.swing.JTextField();
+        atrasmodhabitat = new javax.swing.JButton();
+        limpiarmodhabitat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,10 +69,10 @@ public class ModificarHabitat extends javax.swing.JFrame {
             }
         });
 
-        jCancelar.setText("Cancelar");
-        jCancelar.addActionListener(new java.awt.event.ActionListener() {
+        jCerrar.setText("Cerrar");
+        jCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCancelarActionPerformed(evt);
+                jCerrarActionPerformed(evt);
             }
         });
 
@@ -94,6 +96,20 @@ public class ModificarHabitat extends javax.swing.JFrame {
             }
         });
 
+        atrasmodhabitat.setText("Atras");
+        atrasmodhabitat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasmodhabitatActionPerformed(evt);
+            }
+        });
+
+        limpiarmodhabitat.setText("Limpiar");
+        limpiarmodhabitat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarmodhabitatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,13 +120,6 @@ public class ModificarHabitat extends javax.swing.JFrame {
                 .addGap(107, 107, 107))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jAceptar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jModificar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -125,15 +134,27 @@ public class ModificarHabitat extends javax.swing.JFrame {
                                 .addGap(54, 54, 54)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jZona, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(98, Short.MAX_VALUE))
+                                    .addComponent(jDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jAceptar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jModificar))
+                            .addComponent(atrasmodhabitat))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(limpiarmodhabitat)
+                            .addComponent(jCerrar))))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -149,8 +170,12 @@ public class ModificarHabitat extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jAceptar)
                     .addComponent(jModificar)
-                    .addComponent(jCancelar))
-                .addGap(22, 22, 22))
+                    .addComponent(jCerrar))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(atrasmodhabitat)
+                    .addComponent(limpiarmodhabitat))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -226,11 +251,19 @@ public class ModificarHabitat extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jModificarActionPerformed
 
-    private void jCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCancelarActionPerformed
-        Menu abrir = new Menu();
+    private void jCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCerrarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jCerrarActionPerformed
+
+    private void atrasmodhabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasmodhabitatActionPerformed
+        OpcionesModificar abrir = new OpcionesModificar();
         abrir.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jCancelarActionPerformed
+    }//GEN-LAST:event_atrasmodhabitatActionPerformed
+
+    private void limpiarmodhabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarmodhabitatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_limpiarmodhabitatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,8 +301,9 @@ public class ModificarHabitat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton atrasmodhabitat;
     private javax.swing.JButton jAceptar;
-    private javax.swing.JButton jCancelar;
+    private javax.swing.JButton jCerrar;
     private javax.swing.JTextField jDescripcion;
     private javax.swing.JTextField jId;
     private javax.swing.JLabel jLabel1;
@@ -278,5 +312,6 @@ public class ModificarHabitat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jModificar;
     private javax.swing.JTextField jZona;
+    private javax.swing.JButton limpiarmodhabitat;
     // End of variables declaration//GEN-END:variables
 }

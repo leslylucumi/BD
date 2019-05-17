@@ -35,9 +35,10 @@ public class InsertarCuidados extends javax.swing.JFrame {
         Jid_cuidador_animal = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        agregar = new javax.swing.JButton();
+        limpiar = new javax.swing.JButton();
+        atras = new javax.swing.JButton();
+        cerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,28 +52,40 @@ public class InsertarCuidados extends javax.swing.JFrame {
 
         jLabel2.setText("ID cuidador");
 
-        jButton1.setText("Insertar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        agregar.setText("Agregar");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                agregarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Limpiar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        limpiar.setText("Limpiar");
+        limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                limpiarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Atras");
+        atras.setText("Atras");
+        atras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atrasActionPerformed(evt);
+            }
+        });
+
+        cerrar.setText("Cerrar");
+        cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
@@ -83,12 +96,14 @@ public class InsertarCuidados extends javax.swing.JFrame {
                 .addGap(178, 178, 178))
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jButton1)
-                .addGap(52, 52, 52)
-                .addComponent(jButton2)
-                .addGap(35, 35, 35)
-                .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(agregar)
+                .addGap(18, 18, 18)
+                .addComponent(limpiar)
+                .addGap(44, 44, 44)
+                .addComponent(atras)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cerrar)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,9 +118,10 @@ public class InsertarCuidados extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(agregar)
+                    .addComponent(limpiar)
+                    .addComponent(atras)
+                    .addComponent(cerrar))
                 .addGap(33, 33, 33))
         );
 
@@ -116,7 +132,7 @@ public class InsertarCuidados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Jid_cuidador_animalActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
      int id_animal_cuidador;
      int id_cuidador_animal;
      id_animal_cuidador=Integer.parseInt(Jid_animal_cuidador.getText());
@@ -132,12 +148,22 @@ public class InsertarCuidados extends javax.swing.JFrame {
             System.out.println("No se inserto el Cuidado");
         }
      
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_agregarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
  
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_limpiarActionPerformed
+
+    private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
+        InsertarCuidador abrir = new InsertarCuidador();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_atrasActionPerformed
+
+    private void cerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_cerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,10 +204,11 @@ public class InsertarCuidados extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Jid_animal_cuidador;
     private javax.swing.JTextField Jid_cuidador_animal;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton agregar;
+    private javax.swing.JButton atras;
+    private javax.swing.JButton cerrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton limpiar;
     // End of variables declaration//GEN-END:variables
 }

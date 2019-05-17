@@ -367,7 +367,7 @@ public class InsertarVeterinario extends javax.swing.JFrame {
     }//GEN-LAST:event_JidveterinarioActionPerformed
 
     private void BatrasveterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatrasveterinarioActionPerformed
-        Menu abrir = new Menu();
+        InsertarCuidador abrir = new InsertarCuidador();
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_BatrasveterinarioActionPerformed
